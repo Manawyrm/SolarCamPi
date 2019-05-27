@@ -1,0 +1,1 @@
+quiet root=/dev/mmcblk0p2 ro rootwait console=tty1 console=ttyAMA0,115200 selinux=0 plymouth.enable=0 dwc_otg.lpm_enable=0 elevator=noop audit=0 init=/init.sh raid=noautodetect fastboot

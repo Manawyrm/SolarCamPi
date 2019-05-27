@@ -1,0 +1,5 @@
+FTDI Header
+ISP Header
+Input fuse
+
+I2C ?! 
