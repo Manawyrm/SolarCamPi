@@ -1,7 +1,4 @@
 FTDI Header
 ISP Header
-Input fuse
-
-Caps for linear 3.3V reg
 
 I2C ?! 
