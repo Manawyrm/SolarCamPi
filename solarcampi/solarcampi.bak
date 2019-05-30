@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Transistor_FET:IRLML6402 Q1
+L solarcampi-rescue:IRLML6402-Transistor_FET Q1
 U 1 1 5CEBF952
 P 6950 2150
 F 0 "Q1" V 7293 2150 50  0000 C CNN
@@ -26,7 +26,7 @@ F 3 "https://www.infineon.com/dgdl/irlml6402pbf.pdf?fileId=5546d462533600a401535
 	0    1    -1   0   
 $EndComp
 $Comp
-L Transistor_BJT:DTC123J Q2
+L solarcampi-rescue:DTC123J-Transistor_BJT Q2
 U 1 1 5CED6544
 P 6850 2800
 F 0 "Q2" H 7038 2846 50  0000 L CNN
@@ -39,7 +39,7 @@ $EndComp
 Wire Wire Line
 	6950 2350 6950 2450
 $Comp
-L power:GND #PWR0101
+L solarcampi-rescue:GND-power #PWR0101
 U 1 1 5CEDD24B
 P 6950 3150
 F 0 "#PWR0101" H 6950 2900 50  0001 C CNN
@@ -52,51 +52,51 @@ $EndComp
 Wire Wire Line
 	6950 3000 6950 3150
 $Comp
-L power:+12V #PWR0104
+L solarcampi-rescue:+12V-power #PWR0104
 U 1 1 5CEFAE76
-P 4000 1000
-F 0 "#PWR0104" H 4000 850 50  0001 C CNN
-F 1 "+12V" H 4015 1173 50  0000 C CNN
-F 2 "" H 4000 1000 50  0001 C CNN
-F 3 "" H 4000 1000 50  0001 C CNN
-	1    4000 1000
+P 1150 3600
+F 0 "#PWR0104" H 1150 3450 50  0001 C CNN
+F 1 "+12V" H 1165 3773 50  0000 C CNN
+F 2 "" H 1150 3600 50  0001 C CNN
+F 3 "" H 1150 3600 50  0001 C CNN
+	1    1150 3600
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0105
+L solarcampi-rescue:GND-power #PWR0105
 U 1 1 5CEFB5C4
-P 4400 1800
-F 0 "#PWR0105" H 4400 1550 50  0001 C CNN
-F 1 "GND" H 4405 1627 50  0000 C CNN
-F 2 "" H 4400 1800 50  0001 C CNN
-F 3 "" H 4400 1800 50  0001 C CNN
-	1    4400 1800
+P 1550 4400
+F 0 "#PWR0105" H 1550 4150 50  0001 C CNN
+F 1 "GND" H 1555 4227 50  0000 C CNN
+F 2 "" H 1550 4400 50  0001 C CNN
+F 3 "" H 1550 4400 50  0001 C CNN
+	1    1550 4400
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0106
+L solarcampi-rescue:GND-power #PWR0106
 U 1 1 5CEFBC6A
-P 4800 1000
-F 0 "#PWR0106" H 4800 750 50  0001 C CNN
-F 1 "GND" V 4805 872 50  0000 R CNN
-F 2 "" H 4800 1000 50  0001 C CNN
-F 3 "" H 4800 1000 50  0001 C CNN
-	1    4800 1000
+P 1950 3600
+F 0 "#PWR0106" H 1950 3350 50  0001 C CNN
+F 1 "GND" V 1955 3472 50  0000 R CNN
+F 2 "" H 1950 3600 50  0001 C CNN
+F 3 "" H 1950 3600 50  0001 C CNN
+	1    1950 3600
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GND #PWR0107
+L solarcampi-rescue:GND-power #PWR0107
 U 1 1 5CEFC45E
-P 4800 1100
-F 0 "#PWR0107" H 4800 850 50  0001 C CNN
-F 1 "GND" V 4805 972 50  0000 R CNN
-F 2 "" H 4800 1100 50  0001 C CNN
-F 3 "" H 4800 1100 50  0001 C CNN
-	1    4800 1100
+P 1950 3700
+F 0 "#PWR0107" H 1950 3450 50  0001 C CNN
+F 1 "GND" V 1955 3572 50  0000 R CNN
+F 2 "" H 1950 3700 50  0001 C CNN
+F 3 "" H 1950 3700 50  0001 C CNN
+	1    1950 3700
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:+12V #PWR0109
+L solarcampi-rescue:+12V-power #PWR0109
 U 1 1 5CF1E98B
 P 6550 2000
 F 0 "#PWR0109" H 6550 1850 50  0001 C CNN
@@ -106,87 +106,20 @@ F 3 "" H 6550 2000 50  0001 C CNN
 	1    6550 2000
 	1    0    0    -1  
 $EndComp
-NoConn ~ 4800 1600
-NoConn ~ 3250 4150
-Wire Wire Line
-	5950 2500 5950 1300
-Wire Wire Line
-	5700 2500 5950 2500
-Wire Wire Line
-	6000 2700 6000 1400
-Wire Wire Line
-	5700 2700 6000 2700
+NoConn ~ 1950 4200
 $Comp
-L power:GND #PWR0111
-U 1 1 5CF4D770
-P 5100 3400
-F 0 "#PWR0111" H 5100 3150 50  0001 C CNN
-F 1 "GND" H 5105 3227 50  0000 C CNN
-F 2 "" H 5100 3400 50  0001 C CNN
-F 3 "" H 5100 3400 50  0001 C CNN
-	1    5100 3400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5700 2800 6600 2800
-$Comp
-L MCU_Microchip_ATtiny:ATtiny85-20SU U2
-U 1 1 5CEFD07C
-P 5100 2800
-F 0 "U2" H 4571 2846 50  0000 R CNN
-F 1 "ATtiny85-20SU" H 4571 2755 50  0000 R CNN
-F 2 "Package_SO:SOIJ-8_5.3x5.3mm_P1.27mm" H 5100 2800 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 5100 2800 50  0001 C CNN
-	1    5100 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C2
-U 1 1 5CF63BFD
-P 4150 3200
-F 0 "C2" H 4265 3246 50  0000 L CNN
-F 1 "100n" H 4265 3155 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4188 3050 50  0001 C CNN
-F 3 "~" H 4150 3200 50  0001 C CNN
-	1    4150 3200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5100 3400 4150 3400
-Wire Wire Line
-	4150 3400 4150 3350
-Connection ~ 5100 3400
-Wire Wire Line
-	5100 2150 5100 2200
-Wire Wire Line
-	5100 2200 4150 2200
-Wire Wire Line
-	4150 2200 4150 3050
-Connection ~ 5100 2200
-$Comp
-L power:+3V3 #PWR0110
+L solarcampi-rescue:+3V3-power #PWR0110
 U 1 1 5CF72468
-P 5100 2150
-F 0 "#PWR0110" H 5100 2000 50  0001 C CNN
-F 1 "+3V3" H 5115 2323 50  0000 C CNN
-F 2 "" H 5100 2150 50  0001 C CNN
-F 3 "" H 5100 2150 50  0001 C CNN
-	1    5100 2150
+P 4150 700
+F 0 "#PWR0110" H 4150 550 50  0001 C CNN
+F 1 "+3V3" H 4165 873 50  0000 C CNN
+F 2 "" H 4150 700 50  0001 C CNN
+F 3 "" H 4150 700 50  0001 C CNN
+	1    4150 700 
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3V3 #PWR0112
-U 1 1 5CF78B45
-P 4400 800
-F 0 "#PWR0112" H 4400 650 50  0001 C CNN
-F 1 "+3V3" V 4415 928 50  0000 L CNN
-F 2 "" H 4400 800 50  0001 C CNN
-F 3 "" H 4400 800 50  0001 C CNN
-	1    4400 800 
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R1
+L solarcampi-rescue:R-Device R1
 U 1 1 5CF7E6BE
 P 6550 2300
 F 0 "R1" H 6620 2346 50  0000 L CNN
@@ -217,7 +150,7 @@ F 3 "" H 8900 2100 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0108
+L solarcampi-rescue:GND-power #PWR0108
 U 1 1 5CF0852A
 P 10100 2200
 F 0 "#PWR0108" H 10100 1950 50  0001 C CNN
@@ -228,7 +161,7 @@ F 3 "" H 10100 2200 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x20_Odd_Even J1
+L solarcampi-rescue:Conn_02x20_Odd_Even-Connector_Generic J1
 U 1 1 5C26120C
 P 9800 2900
 F 0 "J1" H 9850 4017 50  0000 C CNN
@@ -239,7 +172,7 @@ F 3 "~" H 9800 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0113
+L solarcampi-rescue:GND-power #PWR0113
 U 1 1 5CFF74E9
 P 7550 2250
 F 0 "#PWR0113" H 7550 2000 50  0001 C CNN
@@ -250,7 +183,7 @@ F 3 "" H 7550 2250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0114
+L solarcampi-rescue:GND-power #PWR0114
 U 1 1 5CFF7DAA
 P 8750 2250
 F 0 "#PWR0114" H 8750 2000 50  0001 C CNN
@@ -265,7 +198,7 @@ Wire Wire Line
 Wire Wire Line
 	10600 2000 10600 1700
 $Comp
-L Device:C C1
+L solarcampi-rescue:C-Device C1
 U 1 1 5CF657ED
 P 1750 1100
 F 0 "C1" H 1865 1146 50  0000 L CNN
@@ -276,7 +209,7 @@ F 3 "~" H 1750 1100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+12V #PWR0103
+L solarcampi-rescue:+12V-power #PWR0103
 U 1 1 5CEF7DCC
 P 1750 950
 F 0 "#PWR0103" H 1750 800 50  0001 C CNN
@@ -287,7 +220,7 @@ F 3 "" H 1750 950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0102
+L solarcampi-rescue:GND-power #PWR0102
 U 1 1 5CEEFFCF
 P 1700 1250
 F 0 "#PWR0102" H 1700 1000 50  0001 C CNN
@@ -297,22 +230,8 @@ F 3 "" H 1700 1250 50  0001 C CNN
 	1    1700 1250
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9600 2300 9050 2300
-Wire Wire Line
-	9050 2300 9050 2950
-Wire Wire Line
-	9050 2950 8050 2950
-Wire Wire Line
-	8050 2950 8050 3550
-Wire Wire Line
-	8050 3550 6100 3550
-Wire Wire Line
-	6100 3550 6100 2900
-Wire Wire Line
-	6100 2900 5700 2900
 $Comp
-L power:GND #PWR0115
+L solarcampi-rescue:GND-power #PWR0115
 U 1 1 5CFA9116
 P 1600 2250
 F 0 "#PWR0115" H 1600 2000 50  0001 C CNN
@@ -323,7 +242,7 @@ F 3 "" H 1600 2250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+12V #PWR0116
+L solarcampi-rescue:+12V-power #PWR0116
 U 1 1 5CFA88A5
 P 1100 1950
 F 0 "#PWR0116" H 1100 1800 50  0001 C CNN
@@ -334,7 +253,7 @@ F 3 "" H 1100 1950 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:+3V3 #PWR0117
+L solarcampi-rescue:+3V3-power #PWR0117
 U 1 1 5CFA795D
 P 2000 1950
 F 0 "#PWR0117" H 2000 1800 50  0001 C CNN
@@ -345,7 +264,7 @@ F 3 "" H 2000 1950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Regulator_Linear:TPS71533__SC70 U3
+L solarcampi-rescue:TPS71533__SC70-Regulator_Linear U3
 U 1 1 5CF9FBE1
 P 1600 1950
 F 0 "U3" H 1600 2192 50  0000 C CNN
@@ -356,7 +275,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/tps715.pdf" H 1300 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Fuse F1
+L solarcampi-rescue:Fuse-Device F1
 U 1 1 5CEFD444
 P 1550 950
 F 0 "F1" V 1353 950 50  0000 C CNN
@@ -367,7 +286,7 @@ F 3 "~" H 1550 950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:C C3
+L solarcampi-rescue:C-Device C3
 U 1 1 5CF3211C
 P 1200 2100
 F 0 "C3" H 1315 2146 50  0000 L CNN
@@ -378,7 +297,7 @@ F 3 "~" H 1200 2100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C4
+L solarcampi-rescue:C-Device C4
 U 1 1 5CF32542
 P 2000 2100
 F 0 "C4" H 2115 2146 50  0000 L CNN
@@ -402,40 +321,29 @@ Connection ~ 1600 2250
 Wire Wire Line
 	1600 2250 2000 2250
 $Comp
-L Device:C C5
+L solarcampi-rescue:C-Device C5
 U 1 1 5CF3656D
-P 3700 1200
-F 0 "C5" H 3815 1246 50  0000 L CNN
-F 1 "100n" H 3815 1155 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3738 1050 50  0001 C CNN
-F 3 "~" H 3700 1200 50  0001 C CNN
-	1    3700 1200
+P 650 3800
+F 0 "C5" H 765 3846 50  0000 L CNN
+F 1 "100n" H 765 3755 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 688 3650 50  0001 C CNN
+F 3 "~" H 650 3800 50  0001 C CNN
+	1    650  3800
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3V3 #PWR0118
-U 1 1 5CF3725E
-P 3700 1050
-F 0 "#PWR0118" H 3700 900 50  0001 C CNN
-F 1 "+3V3" H 3715 1223 50  0000 C CNN
-F 2 "" H 3700 1050 50  0001 C CNN
-F 3 "" H 3700 1050 50  0001 C CNN
-	1    3700 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0119
+L solarcampi-rescue:GND-power #PWR0119
 U 1 1 5CF37D1D
-P 3700 1350
-F 0 "#PWR0119" H 3700 1100 50  0001 C CNN
-F 1 "GND" H 3705 1177 50  0000 C CNN
-F 2 "" H 3700 1350 50  0001 C CNN
-F 3 "" H 3700 1350 50  0001 C CNN
-	1    3700 1350
+P 650 3950
+F 0 "#PWR0119" H 650 3700 50  0001 C CNN
+F 1 "GND" H 655 3777 50  0000 C CNN
+F 2 "" H 650 3950 50  0001 C CNN
+F 3 "" H 650 3950 50  0001 C CNN
+	1    650  3950
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Screw_Terminal_01x02 J2
+L solarcampi-rescue:Screw_Terminal_01x02-Connector J2
 U 1 1 5CEC902C
 P 1200 1050
 F 0 "J2" H 1280 1042 50  0000 L CNN
@@ -451,29 +359,21 @@ Wire Wire Line
 	1500 1250 1700 1250
 Wire Wire Line
 	1500 1050 1500 1250
-Wire Wire Line
-	6000 1400 4800 1400
-Wire Wire Line
-	5950 1300 4800 1300
 $Comp
-L Analog_ADC:INA226 U1
+L solarcampi-rescue:INA226-Analog_ADC U1
 U 1 1 5CEC0CDE
-P 4400 1300
-F 0 "U1" H 4400 1981 50  0000 C CNN
-F 1 "INA226" H 4400 1890 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 4450 1400 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/ina226.pdf" H 4750 1200 50  0001 C CNN
-	1    4400 1300
+P 1550 3900
+F 0 "U1" H 1550 4581 50  0000 C CNN
+F 1 "INA226" H 1550 4490 50  0000 C CNN
+F 2 "Housings_SSOP:MSOP-10_3x3mm_Pitch0.5mm" H 1600 4000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ina226.pdf" H 1900 3800 50  0001 C CNN
+	1    1550 3900
 	1    0    0    -1  
 $EndComp
-NoConn ~ 4000 1400
-NoConn ~ 4000 1500
+NoConn ~ 1150 4000
+NoConn ~ 1150 4100
 NoConn ~ 9600 2000
-NoConn ~ 9600 2100
-NoConn ~ 9600 2200
 NoConn ~ 10100 2100
-NoConn ~ 10100 2300
-NoConn ~ 10100 2400
 NoConn ~ 10100 2500
 NoConn ~ 10100 2600
 NoConn ~ 10100 2700
@@ -505,13 +405,11 @@ NoConn ~ 9600 3900
 NoConn ~ 10100 3700
 NoConn ~ 10100 3800
 NoConn ~ 10100 3900
-NoConn ~ 5700 2600
-NoConn ~ 5700 3000
 Wire Wire Line
 	6550 2000 6550 2050
 Connection ~ 6550 2050
 $Comp
-L power:+12VA #PWR0120
+L solarcampi-rescue:+12VA-power #PWR0120
 U 1 1 5CF5E1D1
 P 7400 2000
 F 0 "#PWR0120" H 7400 1850 50  0001 C CNN
@@ -538,4 +436,316 @@ Wire Wire Line
 Wire Wire Line
 	7400 2050 7550 2050
 Connection ~ 7400 2050
+$Comp
+L Connector:Conn_01x06_Male J4
+U 1 1 5CF0D7D6
+P 10700 3000
+F 0 "J4" H 10672 2882 50  0000 R CNN
+F 1 "FTDI" H 10672 2973 50  0000 R CNN
+F 2 "" H 10700 3000 50  0001 C CNN
+F 3 "~" H 10700 3000 50  0001 C CNN
+	1    10700 3000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 5CF18F66
+P 10500 3200
+F 0 "#PWR0121" H 10500 2950 50  0001 C CNN
+F 1 "GND" H 10505 3027 50  0000 C CNN
+F 2 "" H 10500 3200 50  0001 C CNN
+F 3 "" H 10500 3200 50  0001 C CNN
+	1    10500 3200
+	1    0    0    -1  
+$EndComp
+Text Label 10400 2800 0    50   ~ 0
+RX
+Wire Wire Line
+	10500 2800 10400 2800
+Text Label 10400 2900 0    50   ~ 0
+TX
+Wire Wire Line
+	10500 2900 10400 2900
+Text Label 10150 2300 0    50   ~ 0
+RX
+Text Label 10150 2400 0    50   ~ 0
+TX
+Wire Wire Line
+	10100 2300 10150 2300
+Wire Wire Line
+	10100 2400 10150 2400
+NoConn ~ 10500 2700
+NoConn ~ 10500 3000
+NoConn ~ 10500 3100
+$Comp
+L MCU_Microchip_ATmega:ATmega328P-AU U2
+U 1 1 5CF28A02
+P 4050 2200
+F 0 "U2" H 4050 611 50  0000 C CNN
+F 1 "ATmega328P-AU" H 4050 520 50  0000 C CNN
+F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 4050 2200 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 4050 2200 50  0001 C CNN
+	1    4050 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 700  4150 700 
+Connection ~ 4150 700 
+$Comp
+L solarcampi-rescue:C-Device C2
+U 1 1 5CF4ECCB
+P 3050 1350
+F 0 "C2" H 3165 1396 50  0000 L CNN
+F 1 "100n" H 3165 1305 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3088 1200 50  0001 C CNN
+F 3 "~" H 3050 1350 50  0001 C CNN
+	1    3050 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L solarcampi-rescue:+3V3-power #PWR01
+U 1 1 5CF4ECD1
+P 3050 1200
+F 0 "#PWR01" H 3050 1050 50  0001 C CNN
+F 1 "+3V3" H 3065 1373 50  0000 C CNN
+F 2 "" H 3050 1200 50  0001 C CNN
+F 3 "" H 3050 1200 50  0001 C CNN
+	1    3050 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L solarcampi-rescue:GND-power #PWR02
+U 1 1 5CF4ECD7
+P 3050 1500
+F 0 "#PWR02" H 3050 1250 50  0001 C CNN
+F 1 "GND" H 3055 1327 50  0000 C CNN
+F 2 "" H 3050 1500 50  0001 C CNN
+F 3 "" H 3050 1500 50  0001 C CNN
+	1    3050 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 5CF56A6D
+P 4050 3700
+F 0 "#PWR03" H 4050 3450 50  0001 C CNN
+F 1 "GND" H 4055 3527 50  0000 C CNN
+F 2 "" H 4050 3700 50  0001 C CNN
+F 3 "" H 4050 3700 50  0001 C CNN
+	1    4050 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5CFAD48D
+P 5050 2650
+F 0 "C6" H 5165 2696 50  0000 L CNN
+F 1 "100n" H 5165 2605 50  0000 L CNN
+F 2 "" H 5088 2500 50  0001 C CNN
+F 3 "~" H 5050 2650 50  0001 C CNN
+	1    5050 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 2500 5050 2500
+Wire Wire Line
+	4050 3700 5050 3700
+Wire Wire Line
+	5050 3700 5050 2800
+Connection ~ 4050 3700
+$Comp
+L Device:R R2
+U 1 1 5CFB6F12
+P 5050 2350
+F 0 "R2" H 5120 2396 50  0000 L CNN
+F 1 "10k" H 5120 2305 50  0000 L CNN
+F 2 "" V 4980 2350 50  0001 C CNN
+F 3 "~" H 5050 2350 50  0001 C CNN
+	1    5050 2350
+	1    0    0    -1  
+$EndComp
+Connection ~ 5050 2500
+Wire Wire Line
+	4150 700  5050 700 
+Wire Wire Line
+	5050 700  5050 2200
+$Comp
+L power:GND #PWR04
+U 1 1 5CFC39C3
+P 5900 1600
+F 0 "#PWR04" H 5900 1350 50  0001 C CNN
+F 1 "GND" H 5905 1427 50  0000 C CNN
+F 2 "" H 5900 1600 50  0001 C CNN
+F 3 "" H 5900 1600 50  0001 C CNN
+	1    5900 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP1
+U 1 1 5CFC428F
+P 5700 700
+F 0 "JP1" H 5700 935 50  0000 C CNN
+F 1 "Jumper_2_Open" H 5700 844 50  0000 C CNN
+F 2 "" H 5700 700 50  0001 C CNN
+F 3 "~" H 5700 700 50  0001 C CNN
+	1    5700 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:AVR-ISP-6 J3
+U 1 1 5CF0B3DB
+P 5800 1200
+F 0 "J3" H 5520 1296 50  0000 R CNN
+F 1 "AVR-ISP-6" H 5520 1205 50  0000 R CNN
+F 2 "" V 5550 1250 50  0001 C CNN
+F 3 " ~" H 4525 650 50  0001 C CNN
+	1    5800 1200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 700  5500 700 
+Connection ~ 5050 700 
+Text Label 5250 1300 0    50   ~ 0
+~RST
+Text Label 5250 1200 0    50   ~ 0
+SCK
+Text Label 5200 1100 0    50   ~ 0
+MOSI
+Text Label 5200 1000 0    50   ~ 0
+MISO
+Wire Wire Line
+	5400 1000 5200 1000
+Wire Wire Line
+	5200 1100 5400 1100
+Wire Wire Line
+	5400 1200 5250 1200
+Wire Wire Line
+	5250 1300 5400 1300
+Text Label 4700 1300 0    50   ~ 0
+MOSI
+Text Label 4700 1400 0    50   ~ 0
+MISO
+Text Label 4700 1500 0    50   ~ 0
+SCK
+Wire Wire Line
+	4650 1300 4700 1300
+Wire Wire Line
+	4700 1400 4650 1400
+Wire Wire Line
+	4650 1500 4700 1500
+Text Label 4750 2500 0    50   ~ 0
+~RST
+Text Label 4650 2300 0    50   ~ 0
+RPI_SDA
+Text Label 4650 2400 0    50   ~ 0
+RPI_SCL
+Text Label 9600 2100 2    50   ~ 0
+RPI_SDA
+Text Label 9600 2200 2    50   ~ 0
+RPI_SCL
+Text Label 9600 2300 2    50   ~ 0
+RPI_SHDN
+Text Label 4650 2900 0    50   ~ 0
+RPI_SHDN
+Text Label 4900 3000 0    50   ~ 0
+AVR_SDA
+Text Label 4900 3100 0    50   ~ 0
+AVR_SCL
+Text Label 1950 3900 0    50   ~ 0
+AVR_SDA
+Text Label 1950 4000 0    50   ~ 0
+AVR_SCL
+$Comp
+L Device:R R3
+U 1 1 5D013A55
+P 5200 3250
+F 0 "R3" H 5270 3296 50  0000 L CNN
+F 1 "4k7" H 5270 3205 50  0000 L CNN
+F 2 "" V 5130 3250 50  0001 C CNN
+F 3 "~" H 5200 3250 50  0001 C CNN
+	1    5200 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5D01456F
+P 5450 3150
+F 0 "R4" H 5520 3196 50  0000 L CNN
+F 1 "4k7" H 5520 3105 50  0000 L CNN
+F 2 "" V 5380 3150 50  0001 C CNN
+F 3 "~" H 5450 3150 50  0001 C CNN
+	1    5450 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 3100 5200 3100
+Wire Wire Line
+	4650 3000 5450 3000
+Wire Wire Line
+	5200 3400 5450 3400
+Wire Wire Line
+	5450 3400 5450 3300
+Wire Wire Line
+	5200 3400 4950 3400
+Wire Wire Line
+	4950 3400 4950 3200
+Wire Wire Line
+	4950 3200 4650 3200
+Connection ~ 5200 3400
+Text Label 5450 3400 0    50   ~ 0
+AVR_I2C_PULLUP
+Text Label 1550 3400 0    50   ~ 0
+INA_3V3
+Text Label 650  3650 0    50   ~ 0
+INA_3V3
+Text Label 4650 3300 0    50   ~ 0
+INA_3V3
+Wire Wire Line
+	6600 2800 6350 2800
+Wire Wire Line
+	6350 2800 6350 3500
+Wire Wire Line
+	6350 3500 4650 3500
+Wire Wire Line
+	4650 3500 4650 3400
+$Comp
+L Device:C C?
+U 1 1 5D096BE4
+P 2650 1350
+F 0 "C?" H 2765 1396 50  0000 L CNN
+F 1 "10µ" H 2765 1305 50  0000 L CNN
+F 2 "" H 2688 1200 50  0001 C CNN
+F 3 "~" H 2650 1350 50  0001 C CNN
+	1    2650 1350
+	1    0    0    -1  
+$EndComp
+Connection ~ 3050 1200
+Connection ~ 3050 1500
+Wire Wire Line
+	2650 1200 3050 1200
+Wire Wire Line
+	2650 1500 3050 1500
+Connection ~ 10600 2000
+$Comp
+L Device:C C?
+U 1 1 5D09F43A
+P 10600 2150
+F 0 "C?" H 10715 2196 50  0000 L CNN
+F 1 "10µ" H 10715 2105 50  0000 L CNN
+F 2 "" H 10638 2000 50  0001 C CNN
+F 3 "~" H 10600 2150 50  0001 C CNN
+	1    10600 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D0A3DE2
+P 10600 2300
+F 0 "#PWR?" H 10600 2050 50  0001 C CNN
+F 1 "GND" H 10605 2127 50  0000 C CNN
+F 2 "" H 10600 2300 50  0001 C CNN
+F 3 "" H 10600 2300 50  0001 C CNN
+	1    10600 2300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

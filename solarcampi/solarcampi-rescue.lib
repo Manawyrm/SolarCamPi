@@ -1,202 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Connector_AVR-ISP-6
+# +12V-power
 #
-DEF Connector_AVR-ISP-6 J 0 40 Y Y 1 F N
-F0 "J" 0 400 50 H V L CNN
-F1 "Connector_AVR-ISP-6" 0 -300 50 H V L CNN
-F2 "" -250 50 50 V I C CNN
-F3 "" -1275 -550 50 H I C CNN
-$FPLIST
- IDC?Header*2x03*
- Pin?Header*2x03*
-$ENDFPLIST
-DRAW
-S -105 -220 -95 -250 0 1 0 N
-S -105 350 -95 320 0 1 0 N
-S 250 -95 220 -105 0 1 0 N
-S 250 5 220 -5 0 1 0 N
-S 250 105 220 95 0 1 0 N
-S 250 205 220 195 0 1 0 N
-S 250 350 -250 -250 0 1 10 f
-X MISO 1 400 200 150 L 50 50 1 1 P
-X VCC 2 -100 500 150 D 50 50 1 1 W
-X SCK 3 400 0 150 L 50 50 1 1 P
-X MOSI 4 400 100 150 L 50 50 1 1 P
-X ~RST 5 400 -100 150 L 50 50 1 1 P
-X GND 6 -100 -400 150 U 50 50 1 1 W
-ENDDRAW
-ENDDEF
-#
-# Connector_Conn_01x06_Male
-#
-DEF Connector_Conn_01x06_Male J 0 40 Y N 1 F N
-F0 "J" 0 300 50 H V C CNN
-F1 "Connector_Conn_01x06_Male" 0 -400 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- Connector*:*_1x??_*
-$ENDFPLIST
-DRAW
-S 34 -295 0 -305 1 1 6 F
-S 34 -195 0 -205 1 1 6 F
-S 34 -95 0 -105 1 1 6 F
-S 34 5 0 -5 1 1 6 F
-S 34 105 0 95 1 1 6 F
-S 34 205 0 195 1 1 6 F
-P 2 1 1 6 50 -300 34 -300 N
-P 2 1 1 6 50 -200 34 -200 N
-P 2 1 1 6 50 -100 34 -100 N
-P 2 1 1 6 50 0 34 0 N
-P 2 1 1 6 50 100 34 100 N
-P 2 1 1 6 50 200 34 200 N
-X Pin_1 1 200 200 150 L 50 50 1 1 P
-X Pin_2 2 200 100 150 L 50 50 1 1 P
-X Pin_3 3 200 0 150 L 50 50 1 1 P
-X Pin_4 4 200 -100 150 L 50 50 1 1 P
-X Pin_5 5 200 -200 150 L 50 50 1 1 P
-X Pin_6 6 200 -300 150 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Device_C
-#
-DEF Device_C C 0 10 N Y 1 F N
-F0 "C" 25 100 50 H V L CNN
-F1 "Device_C" 25 -100 50 H V L CNN
-F2 "" 38 -150 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- C_*
-$ENDFPLIST
-DRAW
-P 2 0 1 20 -80 -30 80 -30 N
-P 2 0 1 20 -80 30 80 30 N
-X ~ 1 0 150 110 D 50 50 1 1 P
-X ~ 2 0 -150 110 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Device_R
-#
-DEF Device_R R 0 0 N Y 1 F N
-F0 "R" 80 0 50 V V C CNN
-F1 "Device_R" 0 0 50 V V C CNN
-F2 "" -70 0 50 V I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- R_*
-$ENDFPLIST
-DRAW
-S -40 -100 40 100 0 1 10 N
-X ~ 1 0 150 50 D 50 50 1 1 P
-X ~ 2 0 -150 50 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Jumper_Jumper_2_Open
-#
-DEF Jumper_Jumper_2_Open JP 0 0 Y N 1 F N
-F0 "JP" 0 110 50 H V C CNN
-F1 "Jumper_Jumper_2_Open" 0 -90 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- SolderJumper*Open*
-$ENDFPLIST
-DRAW
-A 0 -30 100 1269 531 0 1 0 N -60 50 60 50
-C -80 0 20 0 0 0 N
-C 80 0 20 0 0 0 N
-X A 1 -200 0 100 R 50 50 1 1 P
-X B 2 200 0 100 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# MCU_Microchip_ATmega_ATmega328P-AU
-#
-DEF MCU_Microchip_ATmega_ATmega328P-AU U 0 20 Y Y 1 F N
-F0 "U" -500 1450 50 H V L BNN
-F1 "MCU_Microchip_ATmega_ATmega328P-AU" 100 -1450 50 H V L TNN
-F2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" 0 0 50 H I C CIN
-F3 "" 0 0 50 H I C CNN
-ALIAS ATmega48P-20AU ATmega48A-AU ATmega48PA-AU ATmega88PV-10AU ATmega88P-20AU ATmega88A-AU ATmega88PA-AU ATmega168PV-10AU ATmega168P-20AU ATmega168A-AU ATmega168PA-AU ATmega328-AU ATmega328P-AU
-$FPLIST
- TQFP*7x7mm*P0.8mm*
-$ENDFPLIST
-DRAW
-S -500 -1400 500 1400 0 1 10 f
-X PD3 1 600 -800 100 L 50 50 1 1 T
-X PD6 10 600 -1100 100 L 50 50 1 1 T
-X PD7 11 600 -1200 100 L 50 50 1 1 T
-X PB0 12 600 1200 100 L 50 50 1 1 T
-X PB1 13 600 1100 100 L 50 50 1 1 T
-X PB2 14 600 1000 100 L 50 50 1 1 T
-X PB3 15 600 900 100 L 50 50 1 1 T
-X PB4 16 600 800 100 L 50 50 1 1 T
-X PB5 17 600 700 100 L 50 50 1 1 T
-X AVCC 18 100 1500 100 D 50 50 1 1 W
-X ADC6 19 -600 1000 100 R 50 50 1 1 I
-X PD4 2 600 -900 100 L 50 50 1 1 T
-X AREF 20 -600 1200 100 R 50 50 1 1 P
-X GND 21 0 -1500 100 U 50 50 1 1 P N
-X ADC7 22 -600 900 100 R 50 50 1 1 I
-X PC0 23 600 300 100 L 50 50 1 1 T
-X PC1 24 600 200 100 L 50 50 1 1 T
-X PC2 25 600 100 100 L 50 50 1 1 T
-X PC3 26 600 0 100 L 50 50 1 1 T
-X PC4 27 600 -100 100 L 50 50 1 1 T
-X PC5 28 600 -200 100 L 50 50 1 1 T
-X ~RESET~/PC6 29 600 -300 100 L 50 50 1 1 T
-X GND 3 0 -1500 100 U 50 50 1 1 W
-X PD0 30 600 -500 100 L 50 50 1 1 T
-X PD1 31 600 -600 100 L 50 50 1 1 T
-X PD2 32 600 -700 100 L 50 50 1 1 T
-X VCC 4 0 1500 100 D 50 50 1 1 W
-X GND 5 0 -1500 100 U 50 50 1 1 P N
-X VCC 6 0 1500 100 D 50 50 1 1 P N
-X XTAL1/PB6 7 600 600 100 L 50 50 1 1 T
-X XTAL2/PB7 8 600 500 100 L 50 50 1 1 T
-X PD5 9 600 -1000 100 L 50 50 1 1 T
-ENDDRAW
-ENDDEF
-#
-# custom_MP1584ENBB
-#
-DEF custom_MP1584ENBB U 0 40 Y Y 1 F N
-F0 "U" 0 0 60 H V C CNN
-F1 "custom_MP1584ENBB" 300 500 60 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
-DRAW
-S -100 400 700 100 0 1 0 f
-X VIN 1 -300 350 200 R 50 50 1 1 W
-X VINGND 2 -300 150 200 R 50 50 1 1 W
-X VOUTGND 3 900 150 200 L 50 50 1 1 w
-X VOUT 4 900 350 200 L 50 50 1 1 w
-ENDDRAW
-ENDDEF
-#
-# power_GND
-#
-DEF power_GND #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 -250 50 H I C CNN
-F1 "power_GND" 0 -150 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
-X GND 1 0 0 0 D 50 50 1 1 W N
-ENDDRAW
-ENDDEF
-#
-# solarcampi-rescue_+12V-power
-#
-DEF solarcampi-rescue_+12V-power #PWR 0 0 Y Y 1 F P
+DEF +12V-power #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "solarcampi-rescue_+12V-power" 0 140 50 H V C CNN
+F1 "+12V-power" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -207,11 +16,11 @@ X +12V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_+12VA-power
+# +12VA-power
 #
-DEF solarcampi-rescue_+12VA-power #PWR 0 0 Y Y 1 F P
+DEF +12VA-power #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "solarcampi-rescue_+12VA-power" 0 140 50 H V C CNN
+F1 "+12VA-power" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -222,11 +31,11 @@ X +12VA 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_+3V3-power
+# +3V3-power
 #
-DEF solarcampi-rescue_+3V3-power #PWR 0 0 Y Y 1 F P
+DEF +3V3-power #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "solarcampi-rescue_+3V3-power" 0 140 50 H V C CNN
+F1 "+3V3-power" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -237,11 +46,34 @@ X +3V3 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_C-Device
+# ATtiny85-20SU-MCU_Microchip_ATtiny
 #
-DEF solarcampi-rescue_C-Device C 0 10 N Y 1 F N
+DEF ATtiny85-20SU-MCU_Microchip_ATtiny U 0 20 Y Y 1 F N
+F0 "U" -500 550 50 H V L BNN
+F1 "ATtiny85-20SU-MCU_Microchip_ATtiny" 100 -550 50 H V L TNN
+F2 "Package_SO:SOIJ-8_5.3x5.3mm_P1.27mm" 0 0 50 H I C CIN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ SOIJ*5.3x5.3mm*P1.27mm*
+$ENDFPLIST
+DRAW
+S -500 -500 500 500 0 1 10 f
+X ~RESET~/PB5 1 600 -200 100 L 50 50 1 1 T
+X XTAL1/PB3 2 600 0 100 L 50 50 1 1 T
+X XTAL2/PB4 3 600 -100 100 L 50 50 1 1 T
+X GND 4 0 -600 100 U 50 50 1 1 W
+X AREF/PB0 5 600 300 100 L 50 50 1 1 T
+X PB1 6 600 200 100 L 50 50 1 1 T
+X PB2 7 600 100 100 L 50 50 1 1 T
+X VCC 8 0 600 100 D 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+# C-Device
+#
+DEF C-Device C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "solarcampi-rescue_C-Device" 25 -100 50 H V L CNN
+F1 "C-Device" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -255,11 +87,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_Conn_02x20_Odd_Even-Connector_Generic
+# Conn_02x20_Odd_Even-Connector_Generic
 #
-DEF solarcampi-rescue_Conn_02x20_Odd_Even-Connector_Generic J 0 40 Y N 1 F N
+DEF Conn_02x20_Odd_Even-Connector_Generic J 0 40 Y N 1 F N
 F0 "J" 50 1000 50 H V C CNN
-F1 "solarcampi-rescue_Conn_02x20_Odd_Even-Connector_Generic" 50 -1100 50 H V C CNN
+F1 "Conn_02x20_Odd_Even-Connector_Generic" 50 -1100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -350,11 +182,11 @@ X Pin_9 9 -200 500 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_DTC123J-Transistor_BJT
+# DTC123J-Transistor_BJT
 #
-DEF solarcampi-rescue_DTC123J-Transistor_BJT Q 0 0 Y N 1 F N
+DEF DTC123J-Transistor_BJT Q 0 0 Y N 1 F N
 F0 "Q" 200 75 50 H V L CNN
-F1 "solarcampi-rescue_DTC123J-Transistor_BJT" 200 0 50 H V L CNN
+F1 "DTC123J-Transistor_BJT" 200 0 50 H V L CNN
 F2 "" 0 0 50 H I L CNN
 F3 "" 0 0 50 H I L CNN
 $FPLIST
@@ -384,11 +216,11 @@ X C 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_Fuse-Device
+# Fuse-Device
 #
-DEF solarcampi-rescue_Fuse-Device F 0 0 N Y 1 F N
+DEF Fuse-Device F 0 0 N Y 1 F N
 F0 "F" 80 0 50 V V C CNN
-F1 "solarcampi-rescue_Fuse-Device" -75 0 50 V V C CNN
+F1 "Fuse-Device" -75 0 50 V V C CNN
 F2 "" -70 0 50 V I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -402,11 +234,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_GND-power
+# GND-power
 #
-DEF solarcampi-rescue_GND-power #PWR 0 0 Y Y 1 F P
+DEF GND-power #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "solarcampi-rescue_GND-power" 0 -150 50 H V C CNN
+F1 "GND-power" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -415,11 +247,11 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_INA226-Analog_ADC
+# INA226-Analog_ADC
 #
-DEF solarcampi-rescue_INA226-Analog_ADC U 0 20 Y Y 1 F N
+DEF INA226-Analog_ADC U 0 20 Y Y 1 F N
 F0 "U" 150 450 50 H V C CNN
-F1 "solarcampi-rescue_INA226-Analog_ADC" 200 -450 50 H V C CNN
+F1 "INA226-Analog_ADC" 200 -450 50 H V C CNN
 F2 "Package_SO:MSOP-10_3x3mm_P0.5mm" 50 100 50 H I C CNN
 F3 "" 350 -100 50 H I C CNN
 $FPLIST
@@ -440,11 +272,11 @@ X Vin- 9 -400 -200 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_IRLML6402-Transistor_FET
+# IRLML6402-Transistor_FET
 #
-DEF solarcampi-rescue_IRLML6402-Transistor_FET Q 0 0 Y N 1 F N
+DEF IRLML6402-Transistor_FET Q 0 0 Y N 1 F N
 F0 "Q" 200 75 50 H V L CNN
-F1 "solarcampi-rescue_IRLML6402-Transistor_FET" 200 0 50 H V L CNN
+F1 "IRLML6402-Transistor_FET" 200 0 50 H V L CNN
 F2 "Package_TO_SOT_SMD:SOT-23" 200 -75 50 H I L CIN
 F3 "" 0 0 50 H I L CNN
 $FPLIST
@@ -475,11 +307,11 @@ X D 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_R-Device
+# R-Device
 #
-DEF solarcampi-rescue_R-Device R 0 0 N Y 1 F N
+DEF R-Device R 0 0 N Y 1 F N
 F0 "R" 80 0 50 V V C CNN
-F1 "solarcampi-rescue_R-Device" 0 0 50 V V C CNN
+F1 "R-Device" 0 0 50 V V C CNN
 F2 "" -70 0 50 V I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -492,11 +324,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_Screw_Terminal_01x02-Connector
+# Screw_Terminal_01x02-Connector
 #
-DEF solarcampi-rescue_Screw_Terminal_01x02-Connector J 0 40 Y N 1 F N
+DEF Screw_Terminal_01x02-Connector J 0 40 Y N 1 F N
 F0 "J" 0 100 50 H V C CNN
-F1 "solarcampi-rescue_Screw_Terminal_01x02-Connector" 0 -200 50 H V C CNN
+F1 "Screw_Terminal_01x02-Connector" 0 -200 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -515,11 +347,11 @@ X Pin_2 2 -200 -100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# solarcampi-rescue_TPS71533__SC70-Regulator_Linear
+# TPS71533__SC70-Regulator_Linear
 #
-DEF solarcampi-rescue_TPS71533__SC70-Regulator_Linear U 0 10 Y Y 1 F N
+DEF TPS71533__SC70-Regulator_Linear U 0 10 Y Y 1 F N
 F0 "U" -150 125 50 H V C CNN
-F1 "solarcampi-rescue_TPS71533__SC70-Regulator_Linear" 0 125 50 H V L CNN
+F1 "TPS71533__SC70-Regulator_Linear" 0 125 50 H V L CNN
 F2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" 0 225 50 H I C CNN
 F3 "" -300 800 50 H I C CNN
 $FPLIST
