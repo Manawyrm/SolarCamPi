@@ -1,4 +1,0 @@
-FTDI Header
-ISP Header
-
-I2C ?! 
