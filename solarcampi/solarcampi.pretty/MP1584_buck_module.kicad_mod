@@ -1,4 +1,4 @@
-(module MP1584_buck_module (layer F.Cu) (tedit 55D1F7A1)
+(module MP1584_buck_module (layer F.Cu) (tedit 5CF101B7)
   (fp_text reference REF** (at 5.08 0.762) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -86,4 +86,9 @@
   (pad 3 thru_hole circle (at 9.271 -6.604) (size 1.524 1.524) (drill 0.7) (layers *.Cu *.Mask F.SilkS))
   (pad 1 thru_hole rect (at -9.271 6.604) (size 1.524 1.524) (drill 0.7) (layers *.Cu *.Mask F.SilkS))
   (pad 2 thru_hole circle (at -9.271 -6.604) (size 1.524 1.524) (drill 0.7) (layers *.Cu *.Mask F.SilkS))
+  (model ${KIPRJMOD}/lib/3d/D-SUN_dcdc_step_down_SIMPLE.step
+    (offset (xyz 0 0 2))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
