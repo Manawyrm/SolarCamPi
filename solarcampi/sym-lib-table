@@ -1,4 +1,0 @@
-(sym_lib_table
-  (lib (name custom)(type Legacy)(uri ${KIPRJMOD}/custom.lib)(options "")(descr ""))
-  (lib (name solarcampi-rescue)(type Legacy)(uri ${KIPRJMOD}/solarcampi-rescue.lib)(options "")(descr ""))
-)
