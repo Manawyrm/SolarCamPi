@@ -1,0 +1,11 @@
+
+
+// Configuration for Software I2C (INA220)
+#define SDA_PORT PORTC
+#define SDA_PIN 0
+#define SCL_PORT PORTE
+#define SCL_PIN 3
+
+#include <SoftWire.h>
+SoftWire Wire = SoftWire();
+
