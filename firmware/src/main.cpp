@@ -14,6 +14,9 @@
 #include "Adafruit_INA219.h"
 #include "LowPower.h"
 
+// todo: eeprom
+// todo: timeout
+
 // INA220 Init
 Adafruit_INA219 ina219;
 void setINAState(bool state = LOW);
@@ -27,16 +30,23 @@ volatile uint8_t i2cData;
 void handleI2CReceive(volatile int numBytes);
 void handleI2CRequest();
 void sleep(uint16_t sleepTime);
+void shutdownSignaled();
 
 struct
 {
     uint16_t voltage;
     uint16_t sleepInterval;
     uint16_t undervoltageLockout;
+    uint16_t undervoltageHysteresis;
+    uint8_t disableTimeout; 
+    uint16_t timeout;
 } registers = {
     .voltage = 0,
     .sleepInterval = 3,
-    .undervoltageLockout = 7000
+    .undervoltageLockout = 7000,
+    .undervoltageHysteresis = 7500,
+    .disableTimeout = 0,
+    .timeout = 30
 };
 
 
@@ -57,21 +67,64 @@ void setup()
     Wire.begin(8);
     Wire.onReceive(handleI2CReceive);
     Wire.onRequest(handleI2CRequest);
+    
+    attachInterrupt(digitalPinToInterrupt(RPI_SHDN), shutdownSignaled, FALLING);  
 }
+
+enum states { 
+    STATE_ACTIVE,
+    STATE_SLEEP,
+    STATE_UNDERVOLTAGE
+};
+volatile uint8_t state = STATE_ACTIVE; 
+
+uint16_t activeTime = 0; 
 
 void loop()
 {
-    digitalWrite(AVR_PWR_EN, HIGH); 
     registers.voltage = (ina219.getBusVoltage_V() * 1000.0f);
-    
- 
-    if (digitalRead(RPI_SHDN) == LOW)
+
+    if (registers.voltage < registers.undervoltageLockout)
     {
-        digitalWrite(AVR_PWR_EN, LOW);
-        sleep(registers.sleepInterval);
+        state = STATE_UNDERVOLTAGE;
     }
 
-    delay(1000);
+    switch (state)
+    {
+        case STATE_ACTIVE:
+            digitalWrite(AVR_PWR_EN, HIGH); 
+            delay(500);
+            if (!registers.disableTimeout)
+                activeTime++;
+
+            if (registers.timeout > activeTime)
+                state = STATE_SLEEP; 
+
+            break;
+        case STATE_SLEEP: 
+            registers.disableTimeout = 0; 
+            activeTime = 0;
+            sleep(registers.sleepInterval);
+            state = STATE_ACTIVE;
+            break;
+        case STATE_UNDERVOLTAGE: 
+            if (registers.voltage > registers.undervoltageHysteresis)
+            {
+                state = STATE_ACTIVE; 
+            }
+            else
+            {
+                sleep(registers.sleepInterval);
+            }
+            break;
+    }
+
+}
+
+void shutdownSignaled()
+{
+    if (state == STATE_ACTIVE)
+        state = STATE_SLEEP; 
 }
 
 void handleI2CRequest()
@@ -97,11 +150,7 @@ void handleI2CReceive(volatile int numBytes)
         }
     }
     while (Wire.available()>0){Serial.print(Wire.read(), HEX);}
-
-
 }
-
-
 
 void setINAState(bool state = LOW)
 {
@@ -110,7 +159,6 @@ void setINAState(bool state = LOW)
     digitalWrite(AVR_I2C_PULLUP, state);
     digitalWrite(INA_3V3, state);
 }
-
 
 uint16_t currentSleepTime = 0; 
 void sleep(uint16_t sleepTime)
@@ -125,7 +173,7 @@ void sleep(uint16_t sleepTime)
     while (currentSleepTime != sleepTime)
     {
         currentSleepTime++;
-        LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF); 
+        LowPower.powerDown(SLEEP_1S, ADC_OFF, BOD_OFF); 
     }
     currentSleepTime = 0;
 
