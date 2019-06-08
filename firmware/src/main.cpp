@@ -1,9 +1,19 @@
+/*
+@brief               embedded controller for solar-powered webcam
+@date                2019-05-26
+@version             1.00
+@author              Tobias Mädel
+@license             MIT
+
+@par 2019-05-26 Tobias Mädel Initial version
+*/
 #include <Arduino.h>
 #include "config.h"
 #include <SoftWire.h>
-#include <Wire.h>
+#include "Wire/src/Wire.h"
 #include "Adafruit_INA219.h"
- 
+#include "LowPower.h"
+
 // INA220 Init
 Adafruit_INA219 ina219;
 void setINAState(bool state = LOW);
@@ -16,23 +26,28 @@ volatile uint8_t i2cRegister;
 volatile uint8_t i2cData;
 void handleI2CReceive(volatile int numBytes);
 void handleI2CRequest();
+void sleep(uint16_t sleepTime);
 
 struct
 {
-    uint8_t miau;
-    uint8_t wuff;
-    uint8_t awoo;
-} registers = {0};
+    uint16_t voltage;
+    uint16_t sleepInterval;
+    uint16_t undervoltageLockout;
+} registers = {
+    .voltage = 0,
+    .sleepInterval = 3,
+    .undervoltageLockout = 7000
+};
 
 
 void setup()
 {
     Serial.begin(9600);
-    // pinMode(RPI_SHDN, INPUT_PULLUP);
+    pinMode(RPI_SHDN, INPUT_PULLUP);
     pinMode(AVR_PWR_EN, OUTPUT); 
 
     setINAState(HIGH);
-    inaWire.enablePullups(true);
+    inaWire.enablePullups(false);
     inaWire.setTimeout_ms(200);
     inaWire.setClock(10000);
     inaWire.setRxBuffer(rxBuf, sizeof(rxBuf));
@@ -46,58 +61,36 @@ void setup()
 
 void loop()
 {
-    /*
-  float shuntvoltage = 0;
-  float busvoltage = 0;
-  float current_mA = 0;
-  float loadvoltage = 0;
-  float power_mW = 0;
+    digitalWrite(AVR_PWR_EN, HIGH); 
+    registers.voltage = (ina219.getBusVoltage_V() * 1000.0f);
+    
+ 
+    if (digitalRead(RPI_SHDN) == LOW)
+    {
+        digitalWrite(AVR_PWR_EN, LOW);
+        sleep(registers.sleepInterval);
+    }
 
-  shuntvoltage = ina219.getShuntVoltage_mV();
-  busvoltage = ina219.getBusVoltage_V();
-  current_mA = ina219.getCurrent_mA();
-  power_mW = ina219.getPower_mW();
-  loadvoltage = busvoltage + (shuntvoltage / 1000);
-  
-  Serial.print("Bus Voltage:   "); Serial.print(busvoltage); Serial.println(" V");
-  Serial.print("Shunt Voltage: "); Serial.print(shuntvoltage); Serial.println(" mV");
-  Serial.print("Load Voltage:  "); Serial.print(loadvoltage); Serial.println(" V");
-  Serial.print("Current:       "); Serial.print(current_mA); Serial.println(" mA");
-  Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
-  Serial.println("");
-
-  delay(2000);
-  */
-
+    delay(1000);
 }
 
 void handleI2CRequest()
 {
     Wire.write(((uint8_t*)&registers)[i2cRegister]);
-
 }
 void handleI2CReceive(volatile int numBytes)
 {
-    Serial.println("i2c receive");
     Wire.write(0x80);
     if (numBytes == 1)
     {
         // i2cget -y 1 0x08 42 c
         i2cRegister = Wire.read();
-        /*Serial.print("Lesezugriff: ");
-        Se rial.println(i2cRegister);
-        */
     }
     if (numBytes == 2)
     {
         // i2cset -y 1 0x08 22 42 b
         i2cRegister = Wire.read();
         i2cData = Wire.read();
-        /*Serial.print("Schreibzugriff: ");
-        Serial.print(i2cRegister);
-        Serial.print(" Daten: ");
-        Serial.println(i2cData);
-        */
         if (sizeof(registers) < i2cRegister)
         {
             ((uint8_t*)&registers)[i2cRegister] = i2cData;
@@ -116,4 +109,27 @@ void setINAState(bool state = LOW)
     pinMode(INA_3V3, OUTPUT);
     digitalWrite(AVR_I2C_PULLUP, state);
     digitalWrite(INA_3V3, state);
+}
+
+
+uint16_t currentSleepTime = 0; 
+void sleep(uint16_t sleepTime)
+{
+    setINAState(false); 
+
+    digitalWrite(RPI_SHDN, LOW); 
+    pinMode(RPI_SHDN, OUTPUT);
+
+    digitalWrite(AVR_PWR_EN, LOW);
+
+    while (currentSleepTime != sleepTime)
+    {
+        currentSleepTime++;
+        LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF); 
+    }
+    currentSleepTime = 0;
+
+    pinMode(RPI_SHDN, INPUT_PULLUP);
+
+    setINAState(true); 
 }
