@@ -10,6 +10,8 @@
 #include <Arduino.h>
 #include "config.h"
 #include <SoftWire.h>
+#include <EEPROM.h>
+
 #include "Wire/src/Wire.h"
 #include "Adafruit_INA219.h"
 #include "LowPower.h"
@@ -46,13 +48,15 @@ struct
     .undervoltageLockout = 7000,
     .undervoltageHysteresis = 7500,
     .disableTimeout = 0,
-    .timeout = 30
+    .timeout = 60
 };
 
 
 void setup()
 {
     Serial.begin(9600);
+
+    //Serial.println("ohai");
     pinMode(RPI_SHDN, INPUT_PULLUP);
     pinMode(AVR_PWR_EN, OUTPUT); 
 
@@ -97,7 +101,7 @@ void loop()
             if (!registers.disableTimeout)
                 activeTime++;
 
-            if (registers.timeout > activeTime)
+            if (registers.timeout < activeTime)
                 state = STATE_SLEEP; 
 
             break;
@@ -144,7 +148,13 @@ void handleI2CReceive(volatile int numBytes)
         // i2cset -y 1 0x08 22 42 b
         i2cRegister = Wire.read();
         i2cData = Wire.read();
-        if (sizeof(registers) < i2cRegister)
+
+       /* Serial.print("Register: "); 
+        Serial.println(i2cRegister);
+        Serial.print("Data: "); 
+        Serial.println(i2cData);*/
+
+        if (sizeof(registers) > i2cRegister)
         {
             ((uint8_t*)&registers)[i2cRegister] = i2cData;
         }
