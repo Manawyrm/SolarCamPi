@@ -1,0 +1,10 @@
+Rev A Errata: 
+no test points for voltages
+no AVR UART header / test points
+missing debug/power LED
+bad TPS LDO placement causes EMI issues
+bad MOSFET choice (Vgs max 12V)
+bad SMPS choice (unstable, latchup issue and high inrush currents)
+
+optional: crowbar circuit to protect RPi
+optional: reverse polarity protection on input

@@ -28,6 +28,8 @@ uint8_t rxBuf[20];
 volatile uint8_t i2cRegister;
 volatile uint8_t i2cData;
 
+volatile uint8_t writeEEPROM = 0;
+
 /*registerDefinition registers = {
     .voltage = 0,
     .sleepInterval = 3,
@@ -48,11 +50,11 @@ void setup()
         Serial.println("Initializing EEPROM");
         log_data  = {
             .voltage = 0,
-            .sleepInterval = 3,
+            .sleepInterval = 280,
             .undervoltageLockout = 7000,
             .undervoltageHysteresis = 7500,
             .disableTimeout = 0,
-            .timeout = 60
+            .timeout = 120
         };
         eeprom_write_log_block();
     }
@@ -90,6 +92,22 @@ void loop()
     if (registers.voltage < registers.undervoltageLockout)
     {
         state = STATE_UNDERVOLTAGE;
+    }
+
+    if (writeEEPROM)
+    {
+        writeEEPROM = 0; 
+        if (registers.disableTimeout)
+        {
+            registers.disableTimeout = 0;
+            eeprom_write_log_block();
+            while (eeprom_busy());
+            registers.disableTimeout = 1;
+        }
+        else
+        {
+            eeprom_write_log_block();
+        }
     }
 
     switch (state)
@@ -159,7 +177,7 @@ void handleI2CReceive(volatile int numBytes)
         if (sizeof(registers) > i2cRegister)
         {
             ((uint8_t*)&registers)[i2cRegister] = i2cData;
-            eeprom_write_log_block();
+            writeEEPROM = 1;
         }
     }
     while (Wire.available()>0){Serial.print(Wire.read(), HEX);}
@@ -192,4 +210,8 @@ void sleep(uint16_t sleepTime)
     pinMode(RPI_SHDN, INPUT_PULLUP);
 
     setINAState(true); 
+
+    Wire.begin(8);
+    Wire.onReceive(handleI2CReceive);
+    Wire.onRequest(handleI2CRequest);
 }
