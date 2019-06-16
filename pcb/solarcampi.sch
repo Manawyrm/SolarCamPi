@@ -440,17 +440,6 @@ F 3 "" H 5900 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Jumper:Jumper_2_Open JP1
-U 1 1 5CFC428F
-P 5700 700
-F 0 "JP1" H 5700 935 50  0000 C CNN
-F 1 "Jumper_2_Open" H 5700 844 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 5700 700 50  0001 C CNN
-F 3 "~" H 5700 700 50  0001 C CNN
-	1    5700 700 
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:AVR-ISP-6 J2
 U 1 1 5CF0B3DB
 P 5800 1200
@@ -461,9 +450,6 @@ F 3 " ~" H 4525 650 50  0001 C CNN
 	1    5800 1200
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	5050 700  5500 700 
-Connection ~ 5050 700 
 Text Label 5250 1300 0    50   ~ 0
 ~RST
 Text Label 5250 1200 0    50   ~ 0
@@ -569,30 +555,6 @@ F 1 "GND" H 10605 2227 50  0000 C CNN
 F 2 "" H 10600 2400 50  0001 C CNN
 F 3 "" H 10600 2400 50  0001 C CNN
 	1    10600 2400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C6
-U 1 1 5D17957D
-P 2700 2650
-F 0 "C6" H 2815 2696 50  0000 L CNN
-F 1 "100n" H 2815 2605 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2738 2500 50  0001 C CNN
-F 3 "~" H 2700 2650 50  0001 C CNN
-	1    2700 2650
-	1    0    0    -1  
-$EndComp
-Text Label 2700 2500 0    50   ~ 0
-AVR_I2C_PULLUP
-$Comp
-L power:GND #PWR011
-U 1 1 5D17E891
-P 2700 2800
-F 0 "#PWR011" H 2700 2550 50  0001 C CNN
-F 1 "GND" H 2705 2627 50  0000 C CNN
-F 2 "" H 2700 2800 50  0001 C CNN
-F 3 "" H 2700 2800 50  0001 C CNN
-	1    2700 2800
 	1    0    0    -1  
 $EndComp
 Text Label 5600 3500 0    50   ~ 0
@@ -1016,17 +978,6 @@ Wire Wire Line
 	4650 2100 5300 2100
 Connection ~ 5400 2550
 $Comp
-L Device:Jumper_NO_Small JP2
-U 1 1 5D102195
-P 6150 2450
-F 0 "JP2" H 6150 2635 50  0000 C CNN
-F 1 "Jumper_NO_Small" H 6150 2544 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6150 2450 50  0001 C CNN
-F 3 "~" H 6150 2450 50  0001 C CNN
-	1    6150 2450
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR017
 U 1 1 5D102B31
 P 5950 2700
@@ -1155,4 +1106,52 @@ Wire Wire Line
 Connection ~ 5050 3950
 Wire Wire Line
 	5050 3950 4050 3950
+$Comp
+L Device:C C6
+U 1 1 5D19A2A4
+P 6850 1250
+F 0 "C6" H 6735 1204 50  0000 R CNN
+F 1 "C" H 6735 1295 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6888 1100 50  0001 C CNN
+F 3 "~" H 6850 1250 50  0001 C CNN
+	1    6850 1250
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+12V #PWR0101
+U 1 1 5D19B372
+P 6850 1000
+F 0 "#PWR0101" H 6850 850 50  0001 C CNN
+F 1 "+12V" H 6865 1173 50  0000 C CNN
+F 2 "" H 6850 1000 50  0001 C CNN
+F 3 "" H 6850 1000 50  0001 C CNN
+	1    6850 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 1000 6850 1100
+$Comp
+L power:GND #PWR0102
+U 1 1 5D19FFB1
+P 6850 1500
+F 0 "#PWR0102" H 6850 1250 50  0001 C CNN
+F 1 "GND" H 6855 1327 50  0000 C CNN
+F 2 "" H 6850 1500 50  0001 C CNN
+F 3 "" H 6850 1500 50  0001 C CNN
+	1    6850 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 1500 6850 1400
+$Comp
+L Device:Jumper_NO_Small JP2
+U 1 1 5D102195
+P 6150 2450
+F 0 "JP2" H 6150 2635 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 6150 2544 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6150 2450 50  0001 C CNN
+F 3 "~" H 6150 2450 50  0001 C CNN
+	1    6150 2450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
