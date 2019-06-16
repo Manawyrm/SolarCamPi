@@ -247,7 +247,7 @@ U 1 1 5CEC902C
 P 1200 1050
 F 0 "J1" H 1280 1042 50  0000 L CNN
 F 1 "Vin 12V" H 1280 951 50  0000 L CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 1200 1050 50  0001 C CNN
+F 2 "solarcampi:TerminalBlock_bornier-2_P5.08mm" H 1200 1050 50  0001 C CNN
 F 3 "~" H 1200 1050 50  0001 C CNN
 	1    1200 1050
 	-1   0    0    1   
@@ -281,7 +281,6 @@ NoConn ~ 10100 3100
 NoConn ~ 10100 3200
 NoConn ~ 10100 3300
 NoConn ~ 10100 3400
-NoConn ~ 9600 2400
 NoConn ~ 9600 2700
 NoConn ~ 9600 2800
 NoConn ~ 9600 3200
@@ -1153,5 +1152,16 @@ F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6150 2450 50 
 F 3 "~" H 6150 2450 50  0001 C CNN
 	1    6150 2450
 	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5D21EF2D
+P 9600 2400
+F 0 "#PWR0103" H 9600 2150 50  0001 C CNN
+F 1 "GND" V 9605 2272 50  0000 R CNN
+F 2 "" H 9600 2400 50  0001 C CNN
+F 3 "" H 9600 2400 50  0001 C CNN
+	1    9600 2400
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC
