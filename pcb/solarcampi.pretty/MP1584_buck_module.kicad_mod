@@ -1,4 +1,4 @@
-(module MP1584_buck_module (layer F.Cu) (tedit 5D0A7E19)
+(module MP1584_buck_module (layer F.Cu) (tedit 5D0A8067)
   (fp_text reference REF** (at 5.08 0.762) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -87,8 +87,28 @@
   (pad 1 thru_hole rect (at -9.271 6.604) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask F.SilkS))
   (pad 2 thru_hole circle (at -9.271 -6.604) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask F.SilkS))
   (model ${KIPRJMOD}/lib/3d/D-SUN_dcdc_step_down_SIMPLE.step
-    (offset (xyz 0 0 2))
+    (offset (xyz 0 0 2.5))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
+  )
+  (model ${KISYS3DMOD}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.step
+    (offset (xyz 9.199999999999999 6.6 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
+  (model ${KISYS3DMOD}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.step
+    (offset (xyz -9.199999999999999 6.6 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
+  (model ${KISYS3DMOD}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.step
+    (offset (xyz 9.199999999999999 -6.6 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 180))
+  )
+  (model ${KISYS3DMOD}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.step
+    (offset (xyz -9.199999999999999 -6.6 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 180))
   )
 )
