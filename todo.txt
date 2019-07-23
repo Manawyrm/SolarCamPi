@@ -1,7 +1,9 @@
 Rev B Errata: 
 SMD N-channel mosfet footprint is wrong, drain & source flipped
 AVR UART header reset circuitry wrong
+AVR UART header RX/TX flipped
 Electrolytic caps on input against MLCC ringing missing
+
 
 Rev A Errata: 
 no test points for voltages ✓
