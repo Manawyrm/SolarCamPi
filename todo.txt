@@ -1,3 +1,8 @@
+Rev B Errata: 
+SMD N-channel mosfet footprint is wrong, drain & source flipped
+AVR UART header reset circuitry wrong
+Electrolytic caps on input against MLCC ringing missing
+
 Rev A Errata: 
 no test points for voltages ✓
 no AVR UART header / test points ✓
@@ -6,6 +11,6 @@ bad TPS LDO placement causes EMI issues ✓
 bad MOSFET choice (Vgs max 12V) ✓
 bad SMPS choice (unstable, latchup issue and high inrush currents)
 jumper for raspi enable ✓
+optional: crowbar circuit to protect RPi  ✓
+optional: reverse polarity protection on input  ✓
 
-optional: crowbar circuit to protect RPi
-optional: reverse polarity protection on input
