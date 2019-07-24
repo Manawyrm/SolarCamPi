@@ -11,11 +11,11 @@
 
   (page A4)
   (title_block
-    (title "Raspberry Pi® Zero W - Hat Template")
+    (title "Solar Camera Pi")
     (date 2018-12-28)
-    (rev 1.0.8)
-    (company StudioPieters®)
-    (comment 1 https://www.studiopieters.nl)
+    (rev B)
+    (company "Tobias Mädel (@manawyrm)")
+    (comment 1 https://tbspace.de)
   )
 
   (layers
