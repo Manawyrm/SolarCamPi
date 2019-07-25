@@ -29,4 +29,4 @@ avrdude Usage to flash firmware:
 avrdude Usage to set fuses:  
 `avrdude -p m328p -P /dev/spidev0.0 -c linuxspi -U lfuse:w:0xe2:m -U hfuse:w:0xd9:m -U efuse:w:0xfd:m`
 
-![Revision A PCB](https://tbspace.de/content/images/solarcampi/3RevATop.JPG)
+![Revision B PCB](https://tbspace.de/content/images/solarcampi2/IMG_6061.JPG)
