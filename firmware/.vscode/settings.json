@@ -1,6 +1,6 @@
 {
     "terminal.integrated.env.linux": {
-        "PATH": "/home/tobias/.platformio/penv/bin:/home/tobias/.platformio/penv:/usr/lib/jvm/java-8-openjdk/bin/:/usr/lib/jvm/java-8-openjdk/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl",
+        "PATH": "/home/tobias/.platformio/penv/bin:/home/tobias/.platformio/penv:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/tobias/Entwicklung/android-studio/sdk/platform-tools:/opt/android-sdk/platform-tools/:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl",
         "PLATFORMIO_CALLER": "vscode"
     }
 }

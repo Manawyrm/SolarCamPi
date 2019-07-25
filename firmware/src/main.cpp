@@ -10,7 +10,7 @@
 #include "main.h"
 #include "config.h"
 #include <SoftWire.h>
-#include "Wire/src/Wire.h"
+#include <Wire.h>
 #include "Adafruit_INA219.h"
 #include "LowPower.h"
 
@@ -30,14 +30,6 @@ volatile uint8_t i2cData;
 
 volatile uint8_t writeEEPROM = 0;
 
-/*registerDefinition registers = {
-    .voltage = 0,
-    .sleepInterval = 3,
-    .undervoltageLockout = 7000,
-    .undervoltageHysteresis = 7500,
-    .disableTimeout = 0,
-    .timeout = 60
-};*/
 #define registers log_data 
 
 void setup()
@@ -50,7 +42,9 @@ void setup()
         Serial.println("Initializing EEPROM");
         log_data  = {
             .voltage = 0,
-            .sleepInterval = 280,
+            .sleepIntervalFast = 50, // 280s
+            .sleepIntervalSlow = 225, // 1800s
+            .sleepIntervalSlowVoltage = 10000,
             .undervoltageLockout = 7000,
             .undervoltageHysteresis = 7500,
             .disableTimeout = 0,
@@ -63,19 +57,22 @@ void setup()
         Serial.println("block found!");
     }
 
-    Serial.print("Timeout: ");
-    Serial.println(registers.timeout);
+    //Serial.print("Timeout: ");
+    //Serial.println(registers.timeout);
 
     //Serial.println("ohai");
     pinMode(RPI_SHDN, INPUT_PULLUP);
     pinMode(AVR_PWR_EN, OUTPUT); 
+    pinMode(LED, OUTPUT); 
 
     setINAState(HIGH);
+
     inaWire.enablePullups(false);
     inaWire.setTimeout_ms(200);
     inaWire.setClock(10000);
     inaWire.setRxBuffer(rxBuf, sizeof(rxBuf));
     inaWire.setTxBuffer(txBuf, sizeof(txBuf));
+
     ina219.begin(&inaWire);
 
     Wire.begin(8);
@@ -106,7 +103,9 @@ void loop()
         }
         else
         {
+            Serial.println("eeprom write start");
             eeprom_write_log_block();
+            Serial.println("eeprom write end");
         }
     }
 
@@ -114,6 +113,7 @@ void loop()
     {
         case STATE_ACTIVE:
             digitalWrite(AVR_PWR_EN, HIGH); 
+            digitalWrite(LED, HIGH);
             delay(500);
             if (!registers.disableTimeout)
                 activeTime++;
@@ -128,7 +128,15 @@ void loop()
 
             while (eeprom_busy());
 
-            sleep(registers.sleepInterval);
+            if (registers.voltage > registers.sleepIntervalSlowVoltage)
+            {
+                sleep(registers.sleepIntervalFast);
+            }
+            else
+            {
+                sleep(registers.sleepIntervalSlow);
+            }
+        
             state = STATE_ACTIVE;
             break;
         case STATE_UNDERVOLTAGE: 
@@ -138,7 +146,7 @@ void loop()
             }
             else
             {
-                sleep(registers.sleepInterval);
+                sleep(registers.sleepIntervalFast);
             }
             break;
     }
@@ -177,7 +185,9 @@ void handleI2CReceive(volatile int numBytes)
         if (sizeof(registers) > i2cRegister)
         {
             ((uint8_t*)&registers)[i2cRegister] = i2cData;
-            writeEEPROM = 1;
+            
+            if (i2cRegister != 12) // Disable timeout flag
+                writeEEPROM = 1;
         }
     }
     while (Wire.available()>0){Serial.print(Wire.read(), HEX);}
@@ -185,9 +195,9 @@ void handleI2CReceive(volatile int numBytes)
 
 void setINAState(bool state = LOW)
 {
-    pinMode(AVR_I2C_PULLUP, OUTPUT); 
+    //pinMode(AVR_I2C_PULLUP, OUTPUT); 
     pinMode(INA_3V3, OUTPUT);
-    digitalWrite(AVR_I2C_PULLUP, state);
+    //digitalWrite(AVR_I2C_PULLUP, state);
     digitalWrite(INA_3V3, state);
 }
 
@@ -199,11 +209,14 @@ void sleep(uint16_t sleepTime)
     pinMode(RPI_SHDN, OUTPUT);
 
     digitalWrite(AVR_PWR_EN, LOW);
+    digitalWrite(LED, LOW);
+
+    Wire.end();
 
     while (currentSleepTime != sleepTime)
     {
         currentSleepTime++;
-        LowPower.powerDown(SLEEP_1S, ADC_OFF, BOD_OFF); 
+        LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF); 
     }
     currentSleepTime = 0;
 

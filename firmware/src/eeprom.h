@@ -6,7 +6,9 @@
 struct eeprom_log_data
 {
     uint16_t voltage;
-    uint16_t sleepInterval;
+    uint16_t sleepIntervalFast;
+    uint16_t sleepIntervalSlow;
+    uint16_t sleepIntervalSlowVoltage;
     uint16_t undervoltageLockout;
     uint16_t undervoltageHysteresis;
     uint8_t disableTimeout; 
