@@ -276,7 +276,7 @@ void Adafruit_INA219::setCalibration_16V_400mA() {
   // Cal = trunc (0.04096 / (Current_LSB * RSHUNT))
   // Cal = 8192 (0x2000)
 
-  ina219_calValue = 8192;
+  ina219_calValue = 10240;
 
   // 6. Calculate the power LSB
   // PowerLSB = 20 * CurrentLSB
@@ -314,15 +314,15 @@ void Adafruit_INA219::setCalibration_16V_400mA() {
   // MaximumPower = 6.4W
 
   // Set multipliers to convert raw current/power values
-  ina219_currentDivider_mA = 20;    // Current LSB = 50uA per bit (1000/50 = 20)
+  ina219_currentDivider_mA = 5;    // Current LSB = 50uA per bit (1000/50 = 20)
   ina219_powerMultiplier_mW = 1.0f; // Power LSB = 1mW per bit
 
   // Set Calibration register to 'Cal' calculated above
   wireWriteRegister(INA219_REG_CALIBRATION, ina219_calValue);
 
   // Set Config register to take into account the settings above
-  uint16_t config = INA219_CONFIG_BVOLTAGERANGE_16V |
-                    INA219_CONFIG_GAIN_1_40MV | INA219_CONFIG_BADCRES_12BIT |
+  uint16_t config = INA219_CONFIG_BVOLTAGERANGE_32V |
+                    INA219_CONFIG_GAIN_8_320MV | INA219_CONFIG_BADCRES_12BIT |
                     INA219_CONFIG_SADCRES_12BIT_1S_532US |
                     INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS;
   wireWriteRegister(INA219_REG_CONFIG, config);
@@ -355,7 +355,7 @@ void Adafruit_INA219::init() {
   _i2c->begin();
 
   // Set chip to large range config values to start
-  setCalibration_32V_2A();
+  setCalibration_16V_400mA();
 }
 
 /*!

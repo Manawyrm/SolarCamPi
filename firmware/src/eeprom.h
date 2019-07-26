@@ -13,6 +13,7 @@ struct eeprom_log_data
     uint16_t undervoltageHysteresis;
     uint8_t disableTimeout; 
     uint16_t timeout;
+    int16_t current;
 };
 
 

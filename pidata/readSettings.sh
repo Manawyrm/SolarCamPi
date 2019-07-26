@@ -24,4 +24,13 @@ echo `i2cget -y 1 0x08 12 c`
 echo "Timeout: "
 echo $(((`i2cget -y 1 0x08 14 c` << 8) + `i2cget -y 1 0x08 13 c`))
 
+echo "Current (mA): "
+RAWCURRENT=$(((`i2cget -y 1 0x08 16 c` << 8) + `i2cget -y 1 0x08 15 c`))
 
+if [ "$RAWCURRENT" -gt "32767" ]
+then
+  CURRENT=$(($RAWCURRENT-65536))
+else
+  CURRENT=$RAWCURRENT
+fi
+echo $CURRENT

@@ -44,11 +44,12 @@ void setup()
             .voltage = 0,
             .sleepIntervalFast = 50, // 280s
             .sleepIntervalSlow = 225, // 1800s
-            .sleepIntervalSlowVoltage = 10000,
-            .undervoltageLockout = 7000,
-            .undervoltageHysteresis = 7500,
+            .sleepIntervalSlowVoltage = 7000,
+            .undervoltageLockout = 4000,
+            .undervoltageHysteresis = 4500,
             .disableTimeout = 0,
-            .timeout = 120
+            .timeout = 120,
+            .current = 0
         };
         eeprom_write_log_block();
     }
@@ -85,7 +86,7 @@ void setup()
 void loop()
 {
     registers.voltage = (ina219.getBusVoltage_V() * 1000.0f);
-
+    registers.current = ina219.getCurrent_mA();
     if (registers.voltage < registers.undervoltageLockout)
     {
         state = STATE_UNDERVOLTAGE;
