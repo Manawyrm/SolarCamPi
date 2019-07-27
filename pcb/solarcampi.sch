@@ -99,126 +99,47 @@ Wire Wire Line
 $Comp
 L solarcampi-rescue:C-Device C3
 U 1 1 5CF657ED
-P 1400 1000
-F 0 "C3" H 1515 1046 50  0000 L CNN
-F 1 "100n" H 1515 955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1438 850 50  0001 C CNN
-F 3 "~" H 1400 1000 50  0001 C CNN
-	1    1400 1000
+P 1500 1750
+F 0 "C3" H 1615 1796 50  0000 L CNN
+F 1 "100n" H 1615 1705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1538 1600 50  0001 C CNN
+F 3 "~" H 1500 1750 50  0001 C CNN
+	1    1500 1750
 	1    0    0    -1  
 $EndComp
 $Comp
 L solarcampi-rescue:+12V-power #PWR06
 U 1 1 5CEF7DCC
-P 1400 800
-F 0 "#PWR06" H 1400 650 50  0001 C CNN
-F 1 "+12V" H 1415 973 50  0000 C CNN
-F 2 "" H 1400 800 50  0001 C CNN
-F 3 "" H 1400 800 50  0001 C CNN
-	1    1400 800 
+P 1500 1550
+F 0 "#PWR06" H 1500 1400 50  0001 C CNN
+F 1 "+12V" H 1515 1723 50  0000 C CNN
+F 2 "" H 1500 1550 50  0001 C CNN
+F 3 "" H 1500 1550 50  0001 C CNN
+	1    1500 1550
 	1    0    0    -1  
 $EndComp
 $Comp
 L solarcampi-rescue:GND-power #PWR07
 U 1 1 5CEEFFCF
-P 1400 1200
-F 0 "#PWR07" H 1400 950 50  0001 C CNN
-F 1 "GND" H 1405 1027 50  0000 C CNN
-F 2 "" H 1400 1200 50  0001 C CNN
-F 3 "" H 1400 1200 50  0001 C CNN
-	1    1400 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L solarcampi-rescue:GND-power #PWR05
-U 1 1 5CFA9116
-P 1600 2250
-F 0 "#PWR05" H 1600 2000 50  0001 C CNN
-F 1 "GND" H 1605 2077 50  0000 C CNN
-F 2 "" H 1600 2250 50  0001 C CNN
-F 3 "" H 1600 2250 50  0001 C CNN
-	1    1600 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L solarcampi-rescue:+12V-power #PWR02
-U 1 1 5CFA88A5
-P 1100 1950
-F 0 "#PWR02" H 1100 1800 50  0001 C CNN
-F 1 "+12V" V 1115 2078 50  0000 L CNN
-F 2 "" H 1100 1950 50  0001 C CNN
-F 3 "" H 1100 1950 50  0001 C CNN
-	1    1100 1950
-	0    -1   -1   0   
-$EndComp
-$Comp
-L solarcampi-rescue:+3V3-power #PWR010
-U 1 1 5CFA795D
-P 2000 1950
-F 0 "#PWR010" H 2000 1800 50  0001 C CNN
-F 1 "+3V3" V 2015 2078 50  0000 L CNN
-F 2 "" H 2000 1950 50  0001 C CNN
-F 3 "" H 2000 1950 50  0001 C CNN
-	1    2000 1950
-	0    1    1    0   
-$EndComp
-$Comp
-L solarcampi-rescue:TPS71533__SC70-Regulator_Linear U2
-U 1 1 5CF9FBE1
-P 1600 1950
-F 0 "U2" H 1600 2192 50  0000 C CNN
-F 1 "TPS71533__SC70" H 1600 2101 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5_Handsoldering" H 1600 2175 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tps715.pdf" H 1300 2750 50  0001 C CNN
-	1    1600 1950
+P 1500 1950
+F 0 "#PWR07" H 1500 1700 50  0001 C CNN
+F 1 "GND" H 1505 1777 50  0000 C CNN
+F 2 "" H 1500 1950 50  0001 C CNN
+F 3 "" H 1500 1950 50  0001 C CNN
+	1    1500 1950
 	1    0    0    -1  
 $EndComp
 $Comp
 L solarcampi-rescue:Fuse-Device F1
 U 1 1 5CEFD444
-P 1200 850
-F 0 "F1" V 1003 850 50  0000 C CNN
-F 1 "1A" V 1094 850 50  0000 C CNN
-F 2 "solarcampi:Fuse_SMD_HASF" V 1130 850 50  0001 C CNN
-F 3 "~" H 1200 850 50  0001 C CNN
-	1    1200 850 
+P 1300 1600
+F 0 "F1" V 1103 1600 50  0000 C CNN
+F 1 "1A" V 1194 1600 50  0000 C CNN
+F 2 "solarcampi:Fuse_SMD_HASF" V 1230 1600 50  0001 C CNN
+F 3 "~" H 1300 1600 50  0001 C CNN
+	1    1300 1600
 	0    1    1    0   
 $EndComp
-$Comp
-L solarcampi-rescue:C-Device C2
-U 1 1 5CF3211C
-P 1200 2100
-F 0 "C2" H 1315 2146 50  0000 L CNN
-F 1 "100n" H 1315 2055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1238 1950 50  0001 C CNN
-F 3 "~" H 1200 2100 50  0001 C CNN
-	1    1200 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L solarcampi-rescue:C-Device C4
-U 1 1 5CF32542
-P 2000 2100
-F 0 "C4" H 2115 2146 50  0000 L CNN
-F 1 "1µF" H 2115 2055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2038 1950 50  0001 C CNN
-F 3 "~" H 2000 2100 50  0001 C CNN
-	1    2000 2100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1900 1950 2000 1950
-Connection ~ 2000 1950
-Wire Wire Line
-	1100 1950 1200 1950
-Connection ~ 1200 1950
-Wire Wire Line
-	1200 1950 1300 1950
-Wire Wire Line
-	1200 2250 1600 2250
-Connection ~ 1600 2250
-Wire Wire Line
-	1600 2250 2000 2250
 $Comp
 L solarcampi-rescue:C-Device C1
 U 1 1 5CF3656D
@@ -233,18 +154,18 @@ $EndComp
 $Comp
 L solarcampi-rescue:Screw_Terminal_01x02-Connector J1
 U 1 1 5CEC902C
-P 850 950
-F 0 "J1" H 930 942 50  0000 L CNN
-F 1 "Vin 12V" H 930 851 50  0000 L CNN
-F 2 "solarcampi:TerminalBlock_bornier-2_P5.08mm" H 850 950 50  0001 C CNN
-F 3 "~" H 850 950 50  0001 C CNN
-	1    850  950 
+P 950 1700
+F 0 "J1" H 1030 1692 50  0000 L CNN
+F 1 "Vin 12V" H 1030 1601 50  0000 L CNN
+F 2 "solarcampi:TerminalBlock_bornier-2_P5.08mm" H 950 1700 50  0001 C CNN
+F 3 "~" H 950 1700 50  0001 C CNN
+	1    950  1700
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	1050 950  1150 950 
+	1150 1700 1250 1700
 Wire Wire Line
-	1150 950  1150 1150
+	1250 1700 1250 1900
 NoConn ~ 9600 2000
 NoConn ~ 10100 2100
 NoConn ~ 10100 2500
@@ -273,8 +194,8 @@ NoConn ~ 10100 3700
 NoConn ~ 10100 3800
 NoConn ~ 10100 3900
 Wire Wire Line
-	1350 850  1400 850 
-Connection ~ 1400 850 
+	1450 1600 1500 1600
+Connection ~ 1500 1600
 $Comp
 L Connector:Conn_01x06_Male J5
 U 1 1 5CF0D7D6
@@ -672,19 +593,6 @@ F 3 "~" H 3550 750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3000 750  3350 750 
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5D073498
-P 1200 1650
-F 0 "TP1" H 1258 1768 50  0000 L CNN
-F 1 "12V" H 1258 1677 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1400 1650 50  0001 C CNN
-F 3 "~" H 1400 1650 50  0001 C CNN
-	1    1200 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1200 1650 1200 1950
 Wire Wire Line
 	4650 2700 4900 2700
 Wire Wire Line
@@ -965,25 +873,25 @@ Wire Wire Line
 $Comp
 L Device:D D1
 U 1 1 5D11CF31
-P 1800 1000
-F 0 "D1" V 1754 1079 50  0000 L CNN
-F 1 "D" V 1845 1079 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-123" H 1800 1000 50  0001 C CNN
-F 3 "~" H 1800 1000 50  0001 C CNN
-	1    1800 1000
+P 1900 1750
+F 0 "D1" V 1854 1829 50  0000 L CNN
+F 1 "D" V 1945 1829 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 1900 1750 50  0001 C CNN
+F 3 "~" H 1900 1750 50  0001 C CNN
+	1    1900 1750
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1800 850  1400 850 
+	1900 1600 1500 1600
 Wire Wire Line
-	1800 1150 1400 1150
-Connection ~ 1400 1150
+	1900 1900 1500 1900
+Connection ~ 1500 1900
 Wire Wire Line
-	1400 1200 1400 1150
+	1500 1950 1500 1900
 Wire Wire Line
-	1150 1150 1400 1150
+	1250 1900 1500 1900
 Wire Wire Line
-	1400 800  1400 850 
+	1500 1550 1500 1600
 $Comp
 L Device:LED D2
 U 1 1 5D130D94
@@ -1136,37 +1044,31 @@ Connection ~ 6550 2050
 $Comp
 L Device:C C10
 U 1 1 5D3E7B1C
-P 2150 1150
-F 0 "C10" V 2000 1150 50  0000 C CNN
-F 1 "100u" V 1900 1150 50  0000 C CNN
-F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.42x2.65mm_HandSolder" H 2188 1000 50  0001 C CNN
-F 3 "~" H 2150 1150 50  0001 C CNN
-	1    2150 1150
+P 2700 1900
+F 0 "C10" V 2550 1900 50  0000 C CNN
+F 1 "100u" V 2450 1900 50  0000 C CNN
+F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.42x2.65mm_HandSolder" H 2738 1750 50  0001 C CNN
+F 3 "~" H 2700 1900 50  0001 C CNN
+	1    2700 1900
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R9
 U 1 1 5D3E861E
-P 2150 850
-F 0 "R9" V 1943 850 50  0000 C CNN
-F 1 "0.5R" V 2034 850 50  0000 C CNN
-F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.42x2.65mm_HandSolder" V 2080 850 50  0001 C CNN
-F 3 "~" H 2150 850 50  0001 C CNN
-	1    2150 850 
+P 2700 1600
+F 0 "R9" V 2493 1600 50  0000 C CNN
+F 1 "0.5R" V 2584 1600 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.42x2.65mm_HandSolder" V 2630 1600 50  0001 C CNN
+F 3 "~" H 2700 1600 50  0001 C CNN
+	1    2700 1600
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2300 1150 2350 1150
+	2850 1900 2900 1900
 Wire Wire Line
-	2350 1150 2350 850 
+	2900 1900 2900 1600
 Wire Wire Line
-	2350 850  2300 850 
-Wire Wire Line
-	2000 850  1800 850 
-Connection ~ 1800 850 
-Wire Wire Line
-	2000 1150 1800 1150
-Connection ~ 1800 1150
+	2900 1600 2850 1600
 Connection ~ 6350 3500
 $Comp
 L Device:R R10
@@ -1303,4 +1205,119 @@ Wire Wire Line
 	8600 2050 8750 2050
 Wire Wire Line
 	8600 2250 8750 2250
+Wire Wire Line
+	1250 2550 1250 2850
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5D073498
+P 1250 2550
+F 0 "TP1" H 1308 2668 50  0000 L CNN
+F 1 "12V" H 1308 2577 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1450 2550 50  0001 C CNN
+F 3 "~" H 1450 2550 50  0001 C CNN
+	1    1250 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 3150 2050 3150
+Connection ~ 1650 3150
+Wire Wire Line
+	1250 3150 1650 3150
+Wire Wire Line
+	1250 2850 1350 2850
+Connection ~ 1250 2850
+Wire Wire Line
+	1150 2850 1250 2850
+Connection ~ 2050 2850
+Wire Wire Line
+	1950 2850 2050 2850
+$Comp
+L solarcampi-rescue:C-Device C4
+U 1 1 5CF32542
+P 2050 3000
+F 0 "C4" H 2165 3046 50  0000 L CNN
+F 1 "1µF" H 2165 2955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2088 2850 50  0001 C CNN
+F 3 "~" H 2050 3000 50  0001 C CNN
+	1    2050 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L solarcampi-rescue:C-Device C2
+U 1 1 5CF3211C
+P 1250 3000
+F 0 "C2" H 1365 3046 50  0000 L CNN
+F 1 "100n" H 1365 2955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1288 2850 50  0001 C CNN
+F 3 "~" H 1250 3000 50  0001 C CNN
+	1    1250 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L solarcampi-rescue:TPS71533__SC70-Regulator_Linear U2
+U 1 1 5CF9FBE1
+P 1650 2850
+F 0 "U2" H 1650 3092 50  0000 C CNN
+F 1 "TPS71533__SC70" H 1650 3001 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5_Handsoldering" H 1650 3075 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps715.pdf" H 1350 3650 50  0001 C CNN
+	1    1650 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L solarcampi-rescue:+3V3-power #PWR010
+U 1 1 5CFA795D
+P 2050 2850
+F 0 "#PWR010" H 2050 2700 50  0001 C CNN
+F 1 "+3V3" V 2065 2978 50  0000 L CNN
+F 2 "" H 2050 2850 50  0001 C CNN
+F 3 "" H 2050 2850 50  0001 C CNN
+	1    2050 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L solarcampi-rescue:+12V-power #PWR02
+U 1 1 5CFA88A5
+P 1150 2850
+F 0 "#PWR02" H 1150 2700 50  0001 C CNN
+F 1 "+12V" V 1165 2978 50  0000 L CNN
+F 2 "" H 1150 2850 50  0001 C CNN
+F 3 "" H 1150 2850 50  0001 C CNN
+	1    1150 2850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L solarcampi-rescue:GND-power #PWR05
+U 1 1 5CFA9116
+P 1650 3150
+F 0 "#PWR05" H 1650 2900 50  0001 C CNN
+F 1 "GND" H 1655 2977 50  0000 C CNN
+F 2 "" H 1650 3150 50  0001 C CNN
+F 3 "" H 1650 3150 50  0001 C CNN
+	1    1650 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5D5BD9B1
+P 2250 1750
+F 0 "C?" H 2368 1796 50  0000 L CNN
+F 1 "CP" H 2368 1705 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 2288 1600 50  0001 C CNN
+F 3 "~" H 2250 1750 50  0001 C CNN
+	1    2250 1750
+	1    0    0    -1  
+$EndComp
+Connection ~ 1900 1600
+Wire Wire Line
+	1900 1600 2250 1600
+Wire Wire Line
+	1900 1900 2250 1900
+Connection ~ 1900 1900
+Wire Wire Line
+	2550 1600 2250 1600
+Connection ~ 2250 1600
+Wire Wire Line
+	2550 1900 2250 1900
+Connection ~ 2250 1900
 $EndSCHEMATC
