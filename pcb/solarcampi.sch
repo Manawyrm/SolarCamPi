@@ -17,48 +17,48 @@ $EndDescr
 $Comp
 L solarcampi-rescue:+12V-power #PWR03
 U 1 1 5CEFAE76
-P 1150 3600
-F 0 "#PWR03" H 1150 3450 50  0001 C CNN
-F 1 "+12V" H 1165 3773 50  0000 C CNN
-F 2 "" H 1150 3600 50  0001 C CNN
-F 3 "" H 1150 3600 50  0001 C CNN
-	1    1150 3600
+P 2000 3950
+F 0 "#PWR03" H 2000 3800 50  0001 C CNN
+F 1 "+12V" H 2015 4123 50  0000 C CNN
+F 2 "" H 2000 3950 50  0001 C CNN
+F 3 "" H 2000 3950 50  0001 C CNN
+	1    2000 3950
 	1    0    0    -1  
 $EndComp
 $Comp
 L solarcampi-rescue:GND-power #PWR04
 U 1 1 5CEFB5C4
-P 1550 4400
-F 0 "#PWR04" H 1550 4150 50  0001 C CNN
-F 1 "GND" H 1555 4227 50  0000 C CNN
-F 2 "" H 1550 4400 50  0001 C CNN
-F 3 "" H 1550 4400 50  0001 C CNN
-	1    1550 4400
+P 2400 4950
+F 0 "#PWR04" H 2400 4700 50  0001 C CNN
+F 1 "GND" H 2405 4777 50  0000 C CNN
+F 2 "" H 2400 4950 50  0001 C CNN
+F 3 "" H 2400 4950 50  0001 C CNN
+	1    2400 4950
 	1    0    0    -1  
 $EndComp
 $Comp
 L solarcampi-rescue:GND-power #PWR08
 U 1 1 5CEFBC6A
-P 1950 3600
-F 0 "#PWR08" H 1950 3350 50  0001 C CNN
-F 1 "GND" V 1955 3472 50  0000 R CNN
-F 2 "" H 1950 3600 50  0001 C CNN
-F 3 "" H 1950 3600 50  0001 C CNN
-	1    1950 3600
+P 2800 3950
+F 0 "#PWR08" H 2800 3700 50  0001 C CNN
+F 1 "GND" V 2805 3822 50  0000 R CNN
+F 2 "" H 2800 3950 50  0001 C CNN
+F 3 "" H 2800 3950 50  0001 C CNN
+	1    2800 3950
 	0    -1   -1   0   
 $EndComp
 $Comp
 L solarcampi-rescue:GND-power #PWR09
 U 1 1 5CEFC45E
-P 1950 3700
-F 0 "#PWR09" H 1950 3450 50  0001 C CNN
-F 1 "GND" V 1955 3572 50  0000 R CNN
-F 2 "" H 1950 3700 50  0001 C CNN
-F 3 "" H 1950 3700 50  0001 C CNN
-	1    1950 3700
+P 2800 4050
+F 0 "#PWR09" H 2800 3800 50  0001 C CNN
+F 1 "GND" V 2805 3922 50  0000 R CNN
+F 2 "" H 2800 4050 50  0001 C CNN
+F 3 "" H 2800 4050 50  0001 C CNN
+	1    2800 4050
 	0    -1   -1   0   
 $EndComp
-NoConn ~ 1950 4200
+NoConn ~ 2800 4550
 $Comp
 L solarcampi-rescue:+3V3-power #PWR015
 U 1 1 5CF72468
@@ -222,23 +222,12 @@ Wire Wire Line
 $Comp
 L solarcampi-rescue:C-Device C1
 U 1 1 5CF3656D
-P 650 3800
-F 0 "C1" H 765 3846 50  0000 L CNN
-F 1 "100n" H 765 3755 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 688 3650 50  0001 C CNN
-F 3 "~" H 650 3800 50  0001 C CNN
-	1    650  3800
-	1    0    0    -1  
-$EndComp
-$Comp
-L solarcampi-rescue:GND-power #PWR01
-U 1 1 5CF37D1D
-P 650 3950
-F 0 "#PWR01" H 650 3700 50  0001 C CNN
-F 1 "GND" H 655 3777 50  0000 C CNN
-F 2 "" H 650 3950 50  0001 C CNN
-F 3 "" H 650 3950 50  0001 C CNN
-	1    650  3950
+P 3400 4200
+F 0 "C1" H 3515 4246 50  0000 L CNN
+F 1 "100n" H 3515 4155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3438 4050 50  0001 C CNN
+F 3 "~" H 3400 4200 50  0001 C CNN
+	1    3400 4200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -256,19 +245,6 @@ Wire Wire Line
 	1050 950  1150 950 
 Wire Wire Line
 	1150 950  1150 1150
-$Comp
-L solarcampi-rescue:INA226-Analog_ADC U1
-U 1 1 5CEC0CDE
-P 1550 3900
-F 0 "U1" H 1550 4581 50  0000 C CNN
-F 1 "INA226" H 1550 4490 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 1600 4000 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/ina226.pdf" H 1900 3800 50  0001 C CNN
-	1    1550 3900
-	1    0    0    -1  
-$EndComp
-NoConn ~ 1150 4000
-NoConn ~ 1150 4100
 NoConn ~ 9600 2000
 NoConn ~ 10100 2100
 NoConn ~ 10100 2500
@@ -493,9 +469,9 @@ Text Label 4650 2900 0    50   ~ 0
 RPI_SHDN
 Text Label 5000 2000 2    50   ~ 0
 AVR_SDA
-Text Label 1950 3900 0    50   ~ 0
+Text Label 2800 4250 0    50   ~ 0
 AVR_SDA
-Text Label 1950 4000 0    50   ~ 0
+Text Label 2800 4350 0    50   ~ 0
 AVR_SCL
 $Comp
 L Device:R R3
@@ -508,9 +484,7 @@ F 3 "~" H 5400 2200 50  0001 C CNN
 	1    5400 2200
 	1    0    0    -1  
 $EndComp
-Text Label 1550 3400 0    50   ~ 0
-INA_3V3
-Text Label 650  3650 0    50   ~ 0
+Text Label 2400 3650 0    50   ~ 0
 INA_3V3
 Text Label 5000 2100 2    50   ~ 0
 INA_3V3
@@ -768,34 +742,34 @@ Wire Wire Line
 Wire Wire Line
 	9200 3300 9000 3300
 $Comp
-L Device:Jumper_NO_Small JP3
+L Device:Jumper_NC_Small JP3
 U 1 1 5D09AB3F
 P 8900 2700
 F 0 "JP3" H 8900 2885 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8900 2794 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 8900 2700 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 8900 2700 50  0001 C CNN
 F 3 "~" H 8900 2700 50  0001 C CNN
 	1    8900 2700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Jumper_NO_Small JP4
+L Device:Jumper_NC_Small JP4
 U 1 1 5D09B0DF
 P 8900 3000
 F 0 "JP4" H 8900 3185 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8900 3094 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 8900 3000 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 8900 3000 50  0001 C CNN
 F 3 "~" H 8900 3000 50  0001 C CNN
 	1    8900 3000
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Jumper_NO_Small JP5
+L Device:Jumper_NC_Small JP5
 U 1 1 5D09C8F7
 P 8900 3300
 F 0 "JP5" H 8900 3485 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8900 3394 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 8900 3300 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 8900 3300 50  0001 C CNN
 F 3 "~" H 8900 3300 50  0001 C CNN
 	1    8900 3300
 	1    0    0    -1  
@@ -1224,4 +1198,103 @@ Wire Wire Line
 	7300 4100 7550 4100
 Wire Wire Line
 	9650 4200 10200 4200
+$Comp
+L solarcampi-rescue:INA226-Analog_ADC U1
+U 1 1 5CEC0CDE
+P 2400 4250
+F 0 "U1" H 2200 4700 50  0000 C CNN
+F 1 "INA226" H 2600 4700 50  0000 C CNN
+F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 2450 4350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ina226.pdf" H 2750 4150 50  0001 C CNN
+	1    2400 4250
+	1    0    0    -1  
+$EndComp
+Text Label 1250 4200 0    50   ~ 0
+SHUNT+
+Text Label 1250 4600 0    50   ~ 0
+SHUNT-
+Wire Wire Line
+	2400 4950 2400 4850
+Wire Wire Line
+	2400 3750 2400 3650
+Wire Wire Line
+	2400 3650 3400 3650
+Wire Wire Line
+	3400 3650 3400 4050
+Wire Wire Line
+	3400 4350 3400 4850
+Wire Wire Line
+	3400 4850 2400 4850
+Connection ~ 2400 4850
+Wire Wire Line
+	2400 4850 2400 4750
+$Comp
+L Device:C C12
+U 1 1 5D49A050
+P 1600 4400
+F 0 "C12" H 1715 4446 50  0000 L CNN
+F 1 "C" H 1715 4355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1638 4250 50  0001 C CNN
+F 3 "~" H 1600 4400 50  0001 C CNN
+	1    1600 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R11
+U 1 1 5D4BFA64
+P 1250 4400
+F 0 "R11" H 1320 4446 50  0000 L CNN
+F 1 "R" H 1320 4355 50  0000 L CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.42x2.65mm_HandSolder" V 1180 4400 50  0001 C CNN
+F 3 "~" H 1250 4400 50  0001 C CNN
+	1    1250 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 4350 1900 4350
+Wire Wire Line
+	1900 4350 1900 4200
+Wire Wire Line
+	2000 4450 1900 4450
+Wire Wire Line
+	1900 4450 1900 4600
+Wire Wire Line
+	1600 4250 1600 4200
+Connection ~ 1600 4200
+Wire Wire Line
+	1600 4200 1900 4200
+Wire Wire Line
+	1600 4550 1600 4600
+Connection ~ 1600 4600
+Wire Wire Line
+	1600 4600 1900 4600
+Wire Wire Line
+	1250 4250 1250 4200
+Wire Wire Line
+	1250 4200 1600 4200
+Wire Wire Line
+	1250 4550 1250 4600
+Wire Wire Line
+	1250 4600 1600 4600
+Wire Wire Line
+	1100 4350 1100 4200
+Wire Wire Line
+	1100 4200 1250 4200
+Connection ~ 1250 4200
+Wire Wire Line
+	1100 4450 1100 4600
+Wire Wire Line
+	1100 4600 1250 4600
+Connection ~ 1250 4600
+$Comp
+L solarcampi-rescue:Screw_Terminal_01x02-Connector J6
+U 1 1 5D510791
+P 900 4350
+F 0 "J6" H 980 4342 50  0000 L CNN
+F 1 "Shunt" H 980 4251 50  0000 L CNN
+F 2 "solarcampi:TerminalBlock_bornier-2_P5.08mm" H 900 4350 50  0001 C CNN
+F 3 "~" H 900 4350 50  0001 C CNN
+	1    900  4350
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC
