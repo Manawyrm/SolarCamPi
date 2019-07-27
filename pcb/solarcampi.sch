@@ -8,7 +8,7 @@ Sheet 1 1
 Title "Solar Camera Pi"
 Date "2019-05-27"
 Rev "A"
-Comp "Tobias Mädel (@manawyrm)"
+Comp "Tobias Mädel (@manawyrm), Tobias Schramm (@Toble_Miner)"
 Comment1 "https://tbspace.de"
 Comment2 ""
 Comment3 ""
@@ -533,20 +533,18 @@ $EndComp
 Text Label 5600 3500 0    50   ~ 0
 AVR_PWR_EN
 $Comp
-L custom:MP1584ENBB PS1
+L tps63070-module:TPS63070-module-compat PS1
 U 1 1 5CFCCCFD
-P 7850 2400
-F 0 "PS1" H 7850 2767 50  0000 C CNN
-F 1 "MP1584EN" H 7850 2676 50  0000 C CNN
-F 2 "solarcampi:MP1584_buck_module" H 6800 2150 50  0001 L CNN
-F 3 "" H 8900 2100 50  0001 L CNN
-	1    7850 2400
+P 8200 2150
+F 0 "PS1" H 8200 2517 50  0000 C CNN
+F 1 "TPS63070-compat" H 8200 2426 50  0000 C CNN
+F 2 "tps63070-module:TPS63070-module-compat" H 7150 1900 50  0001 L CNN
+F 3 "" H 9250 1850 50  0001 L CNN
+	1    8200 2150
 	1    0    0    -1  
 $EndComp
 Text Label 7350 2050 1    50   ~ 0
 +12V_SWITCHED
-Wire Wire Line
-	7150 2050 7550 2050
 Text Label 8900 1700 0    50   ~ 0
 RPI_5V
 Wire Wire Line
@@ -1297,4 +1295,12 @@ F 3 "~" H 900 4350 50  0001 C CNN
 	1    900  4350
 	-1   0    0    -1  
 $EndComp
+Wire Wire Line
+	7150 2050 7800 2050
+Wire Wire Line
+	7550 2250 7800 2250
+Wire Wire Line
+	8600 2050 8750 2050
+Wire Wire Line
+	8600 2250 8750 2250
 $EndSCHEMATC
