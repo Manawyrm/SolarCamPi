@@ -30,3 +30,10 @@ jobs:
     - name: Run PlatformIO
       run: pio run
       working-directory: firmware
+    - name: Upload firmware
+      uses: actions/upload-artifact@v2-preview
+      with:
+        name: firmware.hex
+        path: firmware/.pio/build/arduino/firmware.hex
+
+      
