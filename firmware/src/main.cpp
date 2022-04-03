@@ -1,11 +1,12 @@
 /*
-@brief               embedded controller for solar-powered webcam
-@date                2019-05-26
-@version             1.00
+@brief               Embedded controller for solar-powered webcam
+@date                2022-04-03
+@version             1.10
 @author              Tobias Mädel
 @license             MIT
 
 @par 2019-05-26 Tobias Mädel Initial version
+@par 2022-04-03 Tobias Mädel Added additional debug logs
 */
 #include "main.h"
 #include "config.h"
@@ -15,6 +16,7 @@
 #include "LowPower.h"
 
 volatile uint8_t state = STATE_ACTIVE; 
+volatile uint8_t oldState = state;
 uint16_t activeTime = 0; 
 uint16_t currentSleepTime = 0; 
 
@@ -32,14 +34,21 @@ volatile uint8_t writeEEPROM = 0;
 
 #define registers log_data 
 
+#define debug_print(x) Serial.print(x); Serial.flush();
+#define debug_println(x) Serial.println(x); Serial.flush();
+
 void setup()
 {
-    Serial.begin(9600);
+    pinMode(LED, OUTPUT); 
+    digitalWrite(LED, 1); 
+
+    Serial.begin(115200);
+    debug_println("SolarCamPi Init");
 
     eeprom_init();
     if (!eeprom_find_log_block())
     {
-        Serial.println("Initializing EEPROM");
+        debug_println("Initializing EEPROM");
         log_data  = {
             .voltage = 0,
             .sleepIntervalFast = 50, // 280s
@@ -55,17 +64,16 @@ void setup()
     }
     else
     {
-        Serial.println("block found!");
+        debug_println("Block found");
     }
 
-    //Serial.print("Timeout: ");
-    //Serial.println(registers.timeout);
+    debug_print_registers();
 
-    //Serial.println("ohai");
     pinMode(RPI_SHDN, INPUT_PULLUP);
     pinMode(AVR_PWR_EN, OUTPUT); 
     pinMode(LED, OUTPUT); 
 
+    debug_println("Trying to initialize INA");
     setINAState(HIGH);
 
     inaWire.enablePullups(false);
@@ -76,6 +84,8 @@ void setup()
 
     ina219.begin(&inaWire);
 
+    debug_println("Setting up RPI I2C");
+
     Wire.begin(8);
     Wire.onReceive(handleI2CReceive);
     Wire.onRequest(handleI2CRequest);
@@ -85,8 +95,12 @@ void setup()
 
 void loop()
 {
+    //debug_println("Reading from INA");
     registers.voltage = (ina219.getBusVoltage_V() * 1000.0f);
     registers.current = ina219.getCurrent_mA();
+    //debug_println("Read from INA finish");
+    //debug_print_registers();
+
     if (registers.voltage < registers.undervoltageLockout)
     {
         state = STATE_UNDERVOLTAGE;
@@ -108,8 +122,10 @@ void loop()
             eeprom_write_log_block();
             Serial.println("eeprom write end");
         }
+        debug_print_registers();
     }
 
+    debug_print_state_change();
     switch (state)
     {
         case STATE_ACTIVE:
@@ -120,8 +136,10 @@ void loop()
                 activeTime++;
 
             if (registers.timeout < activeTime)
+            {
+                debug_println("Timeout reached! Shutting down!");
                 state = STATE_SLEEP; 
-
+            }
             break;
         case STATE_SLEEP: 
             registers.disableTimeout = 0; 
@@ -196,14 +214,14 @@ void handleI2CReceive(volatile int numBytes)
 
 void setINAState(bool state = LOW)
 {
-    //pinMode(AVR_I2C_PULLUP, OUTPUT); 
     pinMode(INA_3V3, OUTPUT);
-    //digitalWrite(AVR_I2C_PULLUP, state);
     digitalWrite(INA_3V3, state);
 }
 
 void sleep(uint16_t sleepTime)
 {
+    debug_println("sleep()");
+
     setINAState(false); 
 
     digitalWrite(RPI_SHDN, LOW); 
@@ -228,4 +246,55 @@ void sleep(uint16_t sleepTime)
     Wire.begin(8);
     Wire.onReceive(handleI2CReceive);
     Wire.onRequest(handleI2CRequest);
+
+    debug_println("wakeup!");
+}
+
+void debug_print_state_change()
+{
+    if (oldState != state)
+    {
+        debug_print("[state] ");
+        debug_print_state_name(oldState);
+        debug_print(" -> ");
+        debug_print_state_name(state);
+        debug_println();
+
+        oldState = state;
+    }
+}
+
+void debug_print_state_name(uint8_t _state)
+{
+    switch (_state)
+    {
+        case STATE_ACTIVE: debug_print("STATE_ACTIVE"); break;
+        case STATE_SLEEP: debug_print("STATE_SLEEP"); break;
+        case STATE_UNDERVOLTAGE: debug_print("STATE_UNDERVOLTAGE"); break;
+        default: debug_print("INVALID ("); debug_print(_state); debug_print(")") break;
+    }
+}
+
+void debug_print_registers()
+{
+    debug_println("");
+    debug_println("------------------------------");
+    debug_print("Voltage: ");
+    debug_println(registers.voltage);
+    debug_print("sleepIntervalFast: ");
+    debug_println(registers.sleepIntervalFast);
+    debug_print("sleepIntervalSlow: ");
+    debug_println(registers.sleepIntervalSlow);
+    debug_print("sleepIntervalSlowVoltage: ");
+    debug_println(registers.sleepIntervalSlowVoltage);
+    debug_print("undervoltageLockout: ");
+    debug_println(registers.undervoltageLockout);
+    debug_print("undervoltageHysteresis: ");
+    debug_println(registers.undervoltageHysteresis);
+    debug_print("disableTimeout: ");
+    debug_println(registers.disableTimeout);
+    debug_print("timeout: ");
+    debug_println(registers.timeout);
+    debug_println("------------------------------");
+    debug_println("");
 }
