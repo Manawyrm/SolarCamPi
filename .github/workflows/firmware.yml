@@ -36,4 +36,12 @@ jobs:
         name: firmware.hex
         path: firmware/.pio/build/arduino/firmware.hex
 
-      
+    - name: Release build artifacts
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:          
+        files: |
+          firmware/.pio/build/arduino/firmware.hex
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
