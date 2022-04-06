@@ -58,7 +58,8 @@ void setup()
             .undervoltageHysteresis = 4500,
             .disableTimeout = 0,
             .timeout = 120,
-            .current = 0
+            .current = 0,
+            .lastTimestamp = 0
         };
         eeprom_write_log_block();
     }
@@ -205,7 +206,11 @@ void handleI2CReceive(volatile int numBytes)
         {
             ((uint8_t*)&registers)[i2cRegister] = i2cData;
             
-            if (i2cRegister != 12) // Disable timeout flag
+            if (i2cRegister != 12 && // Disable timeout flag
+                i2cRegister != 17 && // Last timestamp
+                i2cRegister != 18 && // Last timestamp
+                i2cRegister != 19 && // Last timestamp
+                i2cRegister != 20)   // Last timestamp  
                 writeEEPROM = 1;
         }
     }

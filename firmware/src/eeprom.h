@@ -14,6 +14,7 @@ struct eeprom_log_data
     uint8_t disableTimeout; 
     uint16_t timeout;
     int16_t current;
+    uint32_t lastTimestamp;
 };
 
 
